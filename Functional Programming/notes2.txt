@@ -1,0 +1,60 @@
+Types:
+    A collection of related values
+    int: -2^63 to 2^63
+    char: 'a-z' '\t'
+    Bool: True/False
+
+    Type reference:
+        f :: A->B e::a
+        f e :: B 
+
+        Tuple: (True, False) :: (Bool, Bool)
+                (False, 'a', Bool) :: (Bool, char, Bool)
+
+        Function Type: not :: Bool -> Bool 
+                        (&&) :: Bool -> (Bool -> Bool) 
+                        (++) :: [a] -> [a] -> [a]
+
+
+Currying Functions:
+    add_t :: (int, int) -> int
+    add_t t = (fst_t) + (snd_t)
+    add_t (a,b) = a+b
+
+    add_c :: int -> (int -> int)
+    add_c a b = (+)ab
+    add_c 1 2 = ((+)1)2    
+
+    mul_t :: (int, int, int) -> int 
+    mul_t (a, b, c) = a*b*c
+
+    mul_c :: int -> (int -> (int -> int))
+    mul_c a b c = ((*)a)(((*)b)c)
+    mul_c 1 2 3 = ((*)1)(((*)2)3)
+
+
+Partial Applications:
+    add :: int -> (int -> int) 
+    add a b = ((+)a)b
+
+    inc :: int -> int 
+    inc b = (add 1) b
+    inc = add 1 because they're the same
+    inc = (+) 1 simplified
+    inc = (+1) operator section
+
+
+Basic Classes:
+    A class defines a collection of functions 
+    Used to define ad hoc polymorphism aka overloading
+
+    Eq :: For reasoning about equality
+    (==), (/=) a -> a -> Bool
+    1==2, True/=True
+
+    Enum :: For values with successors, predecessors
+    succ/pred :: (Enum a) => a -> a
+
+    enumFrom :: (Enum a) => a -> [a]
+    enumFromThem 0 2 = []
+

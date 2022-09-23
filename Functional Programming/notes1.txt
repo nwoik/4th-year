@@ -1,0 +1,64 @@
+Standard Library:
+    null :, [n] -> bool
+    null[] = True
+    null(_:_) = False
+
+    Take and Drop : int -> [a] -> [a]
+        Take : returns values taken
+        Drop : returns values not taken 
+        
+        Take(2, [3,4,5,6]) = [3,4] # Takes first 2 values
+        Take(2, [1]) = [1] # Takes all values if the amount is greater than the length
+
+        Drop(2, [3,4,5,6]) = [5,6] # Drops first 2 values
+        Drop(2, [1]) = [] # Drops all values if the amount is greater than the length
+
+    reverse() : [a] -> [a]
+        reverse([3,4,1]) = [1,4,3]
+
+    tail & init : [a] -> [a]
+        tail : drop the first value
+        init : reverse the list, drop the first value and return the reversed result
+
+        tail [2,3,4] = [3,4]
+        init [2,3,4] = [2,3]
+
+        init() breakdown:
+            [2,3,4]
+            [4,3,2] # reverse([2,3,4])
+            [3,2] # drop([4,3,2])
+            [2,3] # reverse([3,2])
+
+        init(L) = reverse(tail(reverse(L)))
+        init(L) = take(L')
+            where L' = length(L) - 1
+
+        sum() and product() : (int [a]) => [a] -> a
+        sum([2,3]) = 5
+        product([2,3]) = 6
+
+        repeat([1]) = [[1],[1],[1],[1], inf]
+        replicate(3, [1]) = [[1],[1],[1]]
+        iterate(4, pred) = [4,3,2,1]
+
+        id(a) : a -> a 
+
+Evaluation of Expressions:
+    Expressions are evaluated on demand.
+
+    take 2 $ repeat 1 = [1,1]
+
+    sum([x,x,x])
+        where x = 1+2
+
+    No Destructive updates
+    Data structures are persistent 
+
+
+Common Mistakes with Lists:
+    F : [a] -> bool # A function that checks if a list is empty
+    F(L) = length(L) == 0 # wrong
+    F(L) = null(L) # use this instead
+
+    
+

@@ -1,0 +1,37 @@
+Final Year Project:
+
+Report > actual Project
+
+oct 17 due date for project selection
+Nov 2 outline doc due
+mar 8 extended abstract due 
+Apr 5 open day 
+Apr 24 Project due date 
+
+50 pages avg
+
+outline doc:
+    State the project given in your own words
+    1 page
+
+extended abstract:
+    Introduction to report with a summary
+    5 pages
+    not formal 
+
+Deliverable Project Report:
+    1 analysis (no code)
+    2 Design (no code) # I have to achieve a certain goal
+    3 Implementation (3rd party packages, program layout, code) # This is how I achieved it 
+    4 Testing/Evaluation
+    5 Appendix
+
+Grading:
+    300 marks
+
+Passive phrases
+Clear and consise
+Identify all 3rd party sources
+Proper citations 
+Latex
+Charts tables, figures must have captions and be properly referenced

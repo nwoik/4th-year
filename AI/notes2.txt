@@ -1,0 +1,40 @@
+Prediction:
+    Regression:
+        The prediction continous values
+        
+    Classification:
+        The prediction of discrete values 
+
+    X = Object 
+    Y = Target
+    Y' = The predicted target value 
+
+    Labeled data set:
+        Every example X comes with Y
+        The target values go into it's own seperate vectors
+
+    Supervised learning:
+        Instance/Example based:
+            Nearest neighbour algorithm:
+                Find the example that's the nearest neighbour
+
+                Problems:
+                    Noisy data sets
+                    Errors in the data 
+
+            K-nearest neighbour:
+                Find several examples that's closest to object and get the average
+
+                Fit and predict
+                All the work takes place in prediction
+
+
+        Model based:
+            A general way of making a prediction. E.g Formula or Function
+            Function/Formula is learned from the data set
+            The set is infinite
+            Find the algorithm approximately equal (=) to the target Function
+
+            Fit and predict
+            All the work takes place in fit 
+

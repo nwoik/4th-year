@@ -1,0 +1,18 @@
+Features: description for objects
+Data set is a collection of objects
+Example = instance
+
+m = number of examples
+n = feature 
+
+Write
+
+Max = biggest number
+Arg max = the arguement with the biggest value
+
+Problems with eu:
+    Scale the features to the same range
+    If features are correlated
+    The curse of Dimensionality
+
+Standard 

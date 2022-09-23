@@ -1,0 +1,12 @@
+Portfolio:
+    Show off personal projects
+    Exp gained through projects 
+    List out skills acquired
+
+    Elements:
+        Github:
+            Good project title
+            README describing what it is, 
+        Personal Website
+        Hosted web projects 
+

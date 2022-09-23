@@ -1,0 +1,23 @@
+Software Engineering:
+
+PLan Based Process (Waterfall, V-model):
+	Predictive, document based, requirements specified in detail
+	Adv: Greater control and repeatability
+	Con: Time consuming, slow and inflexible
+	Suitable for large scale projects
+
+
+Lightweight process (Scrum, DevOps, XP):
+	Planning is done incrementaly
+	Flexibility allowing for change
+	Easier to receive feedback from customer
+	Lack of design and documentation
+	Suitable for medium sized projects with potentially changing requirements
+
+Code and fix:
+	No defined phases or processes
+	Suitable for small projects
+
+
+			
+	
