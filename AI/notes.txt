@@ -1,0 +1,25 @@
+Vector:
+    Matrix with 1 column
+    m directional Vector
+    2 types, column vector and row vector
+    Default is column
+    Indexed from 1
+
+Tensors:
+    No dimensions
+    Scalar has 0 Tensors
+
+    Scalar addition and multiplication:
+        2 vectors multiplied together makes a Scalar
+        Scalar A 
+        A+2 adds 2 to each element in A 
+        2A multiplies every element in A 
+
+Hadamard Product:
+    Addition and multiplication of matrices that have the same direction
+
+Matrix multiplication:
+    AB = C 
+    m*p = A 
+    p*n = B
+
