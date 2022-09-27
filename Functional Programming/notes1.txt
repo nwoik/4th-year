@@ -1,7 +1,7 @@
 Standard Library:
-    null :, [n] -> bool
-    null[] = True
-    null(_:_) = False
+    null :: [n] -> bool
+    null [] = True
+    null (_:_) = False
 
     Take and Drop : int -> [a] -> [a]
         Take : returns values taken
