@@ -1,0 +1,27 @@
+Linear equations: y = a + bx
+
+Linear and Vectors:
+    y = B0 + xB
+    
+    y = 12 + 3x1 +4x2 + 5x3
+    B = [3,4,5]
+
+    
+    or 
+
+
+    y = xb 
+
+
+
+
+Linear Regression:
+    The scoring function is the loss/cost function
+
+    Squared to penalize bigger error
+    Squared to make it continous 
+
+    Ordinary least squared regression 
+
+
+    
