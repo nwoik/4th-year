@@ -1,0 +1,14 @@
+Normal Equation for OLS regression:
+    Parameter: Target value of
+    The loss function is convex 
+
+    The minimum point is where the turning point is located
+    When the gradient of the loss function is equal to 0, then thats the minimum loss
+
+    Differenciate partially and put them into the gradient vector 
+
+    Problems:
+        Can only be used if the data set is small because the function is cubic
+        
+
+
