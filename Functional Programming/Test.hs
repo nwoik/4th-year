@@ -1,6 +1,5 @@
 {-# OPTIONS_GHC -Wno-unrecognised-pragmas #-}
 {-# HLINT ignore "Use camelCase" #-}
-{-# HLINT ignore "Eta reduce" #-}
 module Test where
 
 f1 :: Int -> Bool
@@ -37,8 +36,10 @@ predicates = [f1,f2,f3,g1,g2]
 get_predicate :: Int -> (Int -> Bool)
 get_predicate i = predicates!!i
 
-get_and_apply :: Int -> Int -> Bool
-get_and_apply i v = get_predicate i v
+get_and_apply :: Int -> Int -> (Int -> Bool)
+get_and_apply i v = predicates!!i 
+
+
 
 main = do
     print (f1 1)
