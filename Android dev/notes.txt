@@ -1,0 +1,20 @@
+Android List Type Widgets:
+
+    Data adapter:
+        Fetches data
+        Reads data
+        Formats data according to layout specification
+        Exports data into the list 
+
+        ArrayAdapter<?>
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
+            android.R.layout.simple_spinner_item, listName);
+
+        public class MyCustomAdapter extends ArrayAdapter {
+            public MyCustomAdapter () {}
+            public view getView() {}
+
+        }
+
+        

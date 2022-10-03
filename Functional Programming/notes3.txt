@@ -1,0 +1,42 @@
+List Comprehension
+
+Association Lists (dictionaries)
+    lookup :: Eq k => k -> [(k,v)] -> Maybe v
+    lookup k kvs
+        | null vs = Nothing
+        | otherwise = head vs
+        where Vs = [v | (k,v) <- kvs, k == k']
+
+Positions
+    a = 'a'
+    as = abrakadabra
+
+    positions :: Eq a => a -> [a] -> [Int]
+
+    positions a as = [i | (i,a) <- pairs, a == a']
+        where pairs = zip [a] as
+    
+    
+    [0, 3, 5, 7, 10] 
+
+Fibonachi number computation
+    fib :: Int -> Int 
+    fib i = fibs!!i
+        where fibs = 0:1:[f1+f2 | (f1, f2) <- zip, fibs (tail, fibs)]
+
+Quicksort
+    qsort :: (Ord a) => [a] -> [a]
+    qsort [] = []
+    qsort [a] = [a]
+    qsort (a:as) = qsort les ++ [a] ++ qsort gts
+        where (les, gts) = partition a as 
+
+    partition :: (Ord a) => a -> [a] -> ([a], [a])
+    partition a as = (les, gts)
+        where les = [a' | a <- as, a' <= a]
+            gts = [a' | a <- as, a' > a]
+
+
+Main
+    main = do
+    
