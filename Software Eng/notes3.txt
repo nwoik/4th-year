@@ -1,0 +1,26 @@
+Software modelling:
+    It's a simplified view or small scale version of what you intend to build
+    Not all details are included. Features and functionality is left out
+    Helps understand the requirements needed
+    Created in a short period of time
+
+    Textual and Graphical models
+
+    Modelling languages:
+        Flow charts
+        UML - For object oriented engineering 
+        State machines - For real time systems
+
+    Types of Models:
+        Structural models:
+            Describes the elements in the system and the relationships between objects
+
+        Behavioural models:
+            Describes the execution of the system and state changes
+            Time dependent and related to when software is running
+            E.g UML sequence diagram
+
+    UML:
+        
+
+
