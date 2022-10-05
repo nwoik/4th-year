@@ -1,0 +1,64 @@
+Gradient Descent:
+    Starts with an initial guess for the values of the parameter.
+    If the gradient is positive, make it smaller
+    If it's negative then make it bigger
+
+    B = B - gj/gBi
+
+    Using the vectorized implementation works with all the old values
+
+    2 reason to scale:
+        You get a more direct path to the minimum which takes more steps
+        It's harder to pick a single value for alpha when not scaled
+
+Gradient descent - search in the model's parameter space for values of the parameters that minimize loss function.
+- Starts with an initial guess for the values of the parameter.
+- do this repeatedly, updates param values - in hopes to reduce loss.
+
+took a pic to show the graph
+
+How to locate beta - If the gradient is positive, then make the beta smaller, vice versa for negative(bigger).
+
+Bi = Bi - gj/agBi
+
+gj = og gradient
+gBi = gradient of Beta
+a = Alpha(multiply by learning rate)
+
+Look up Alpha, cuz you were watching the waifu gacha
+Alpha will not be 0, as it would make no change
+
+B = Vector of Betas(n+1 in length)
+Using the vectorized implementation works with all the old values
+
+Baby Steps
+Alpha - change each Beta based on its gradient, this time instead multiply each gradient by a number less than 1
+Just right, like Goldilocks
+
+You didn't need to scale your features in normal equation,but with gradient descent you SHOULD scale your features.
+- If you don't scale, it becomes quite indirect on the path to the minimum
+- You get a more direct path to the minimum which takes more steps,
+  It's harder to pick a single value for alpha when not scaled
+
+The steps get smaller, the gradient gets smaller => So can stay at the same alpha learning rate
+
+3 Variants of GD - The one we learnt was Batch Gradient Descent
+- So called cause it works with all examples
+	- an enormous amount of data if m is big
+
+Guaranteed to find the minimum if you run it long enough or alpha isn't too big
+
+Stochastic Gradient Descent
+- instead of a lot of examples, use one example on each loop through
+- huge speed-up
+- its bumpy, cuz you're looking at each example indvidually
+	- make alpha learning rate smaller, cuz then you can reach faster through oscillating
+		- ^This is simulated annealing
+
+Mini-Batch Gradient Descent
+- we compute with some examples from the training set around the loop
+- this is the middle of the GDs
+- Bounces around much less than Stochastic, but much more likely to find the minimum point
+
+FOr non-convex functions, stochastic would be good, as can bounce around and hopefully skip over the local minimum
+	- bigger alphas can deal with non-convex functions as can step over local minimum maybe?

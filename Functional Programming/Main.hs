@@ -37,7 +37,9 @@ f2 a
 
 -- Task 3
 {-
-
+f3 is the same as f1.
+Except rather than using if else's,  
+the function is redefined for each case
 -}
 f3 :: Int -> Bool
 f3 1 = True
@@ -47,10 +49,19 @@ f3 5 = True
 f3 a = False
 
 -- Task 4
+{-
+g1 does the opposite of f1.
+It takes an int and applies it to f1.
+The the result is applied to the not function.
+-}
 g1 :: Int -> Bool
 g1 a = not (f1 a)
 
 -- Task 5
+{-
+g2 does the same thing as g1.
+Instead it uses the lambda of the variable.
+-}
 g2 :: Int -> Bool
 g2 = \a -> not (f1 a)
 
@@ -96,11 +107,71 @@ The only function outputs added are the ones that are false
 count_false_applications :: Int -> Int
 count_false_applications a = length [f | f <- apply_to_all a, f == False]
 
--- -- Task 11
--- has_opposites :: Int -> Bool
--- has_opposites a = 
-
+-- Task 11
+{-
+has_opposites works by comparing the lengths of 2 lists.
+The first list created contains all the False values. (If any)
+The second list contains all the True values. (If any)
+It checks if the length of the false and true lists is not 0. 
+If they're both not 0, then there are both True and False in the list. 
+Meaning it has opposites.
+-}
+has_opposites :: Int -> Bool
+has_opposites a = length [f | f <- apply_to_all a, f == False] /= 0 
+  && length [f | f <- apply_to_all a, f == True] /= 0
 
 
 main = do
+  {-Task 1
+  Passing integer 1 to f1
+  Expected return value True
+  -}
     print (f1 1)
+
+  {-Task 2
+    Passing integer 2 to f2
+    Expected return value True
+  -}
+    print (f2 2)
+
+  {-Task 3
+    Passing int 4 to f3
+    Expected return value False
+  -}
+    print (f3 4)
+
+  {-Task 4
+    Passing int 4 to g1
+    Expected return value True
+  -}
+    print (g1 4)
+
+  {-Task 5
+    Passing int 5 to g2
+    Expected return value False
+  -}
+    print (g2 5)
+
+  {-Task 8
+    Passing int 3 and 4 into get_apply
+    Expected function from predicates f3 and output True
+  -}
+    print (get_and_apply 3 4)
+
+  {-Task 9
+    Passing int 5 to apply_to_all
+    Expected return values [True, True, True, False, False]
+  -}
+    print (apply_to_all 5)
+
+  {-Task 10
+    Passing int 6 to count_false_applications
+    Expected return value 3
+  -}
+    print (count_false_applications 6)
+
+  {-Task 11
+    Passing int 1 to has_opposites
+    Expected return value True
+  -}
+    print (has_opposites 3)

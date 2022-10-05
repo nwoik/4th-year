@@ -1,0 +1,81 @@
+Guide to Developing Recursive Functions:
+- State the signature
+- State the cases
+- Solve the base cases 
+- Solve the remaining cases
+- Simplify and generalize the solution
+
+
+Product:
+    product [1,2,4] = 8
+    product [] = 1
+
+    product :: [Int] -> Int
+    product [] = 1
+    product (a:a:) = a * product a
+    product :: Num a :: [a] -> a
+
+
+drop:
+    examples
+        drop (-2) [1] = [1]
+        drop 0 [1,5] = [1,5]
+        drop 1 [1,5] = [5]
+
+    signature
+        drop Int -> [Int] -> [Int]
+
+    state all cases
+        drop i as | i < 0 = ?
+        drop i as | i > length as = ?
+        drop i as | i == 0 = ?
+        drop i as = as == [] = ?
+        drop i as = ?
+
+    base case 
+        drop i as | i < 0 = as
+        drop i as | i > length as = []
+        drop i as | i == 0 = as
+        drop i as | as == [] = []
+
+        example:
+            drop 3 [1,2,3,4]
+            = drop 3 ([1,2,3,4])
+            = drop 2 ([2,3,4])
+            = drop 1 ([3,4])
+            = drop 0 ([4])
+        drop i as = drop (i-1) as
+
+
+    Simplify and generalize
+        Drop i as | i <=0 = as
+        Drop i [] = []
+        Drop i (_:as) = Drop (i-1) as
+
+        Drop :: Int → [a] → [a]
+
+Init:
+    examples:
+        init :: [1] = []
+        init :: [2,3] = [2]
+        init :: [1,2,5] = [1,2]
+
+    signature
+        init :: [a] -> [a]
+
+    state all cases
+        init [] = ?
+        init [a] = ?
+        init (a:as) = ?
+
+    base cases 
+        init [] = error
+        init [a] = []
+        init (a:as) = a:init as
+
+
+    
+
+
+
+
