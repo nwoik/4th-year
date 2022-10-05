@@ -5,7 +5,7 @@ Example = instance
 m = number of examples
 n = feature 
 
-Write
+
 
 Max = biggest number
 Arg max = the arguement with the biggest value
