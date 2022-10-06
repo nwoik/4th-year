@@ -1,10 +1,30 @@
-import random
-from time import sleep
 import numpy as np
+import pandas as pd
+import numpy as np
+from sklearn.preprocessing import StandardScaler
+from sklearn.metrics.pairwise import euclidean_distances
 
-import numpy.linalg as npla
+data_frame = pd.read_csv("./AI/houses.csv")
 
-from math import sqrt
+print(data_frame.info)
 
-A = np.random()
-print(A)
+features = ["flarea", "bdrms", "bthrms"]
+
+houses = data_frame[features].values
+
+def euc(x, xp):
+    return np.sqrt(np.sum((x-xp)**2))
+
+your_house = np.array([124, 3, 1])
+my_house = np.array([130, 2, 1])
+
+print(euc(your_house, my_house))
+
+distances = [euc(houses[4], x) for x in houses]
+print(distances)
+
+scaler = StandardScaler()
+
+scaler.fit(houses)
+houses_scaled = scaler.transform(houses)
+print(houses_scaled)
