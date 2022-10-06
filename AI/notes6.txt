@@ -1,0 +1,44 @@
+Error Estimation:
+    A measure of how good a model is.
+
+    Choosing a different ewvaluation measure:
+        Mean absolute error 
+        Computes the mean of the losses
+
+    Generalizing unseen data:
+        When measuring how good a model is using the data set, it's called the training error
+        The figure is too optimistic because it's already minimized the error on the data set 
+
+        The correct thing to do is compute on a test set. The value returned is called the test error 
+
+    Holdout:
+        Used on large data sets
+        The data set is split up at random 
+        One portion is used for training and the other is used for testing
+        The set must be randomized especially if it's ordered so the training isn't biased
+
+        When test data is looked at during training, it's called leakage/cheating
+
+        The mean used for standardization is taken from the training data 
+        Even when calculating the standardization of the test data 
+
+        Problems:
+            Inconsistency, the accuracy is dependent on the random split
+            The test set is independent of the training
+            The results also independent  
+
+    k-Fold Cross Validation:
+        Data is split K times at random to get K folds
+        Each fold takes a turn at being the test set (K tests)
+
+        Advantages:
+            Test sets and training sets are independent
+            Bigger training sets. More data can be set aside for training
+
+        Problems:
+            Training sets overlap
+            More costly than holdout 
+            
+
+
+
