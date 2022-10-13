@@ -1,0 +1,18 @@
+Assignment 1:
+    A 4 activity application to present the members of a group:
+        Present the List
+        Give simple details including image
+        Give all / more text details
+        Present some web information
+
+    Necessary details:
+        Some user classes to deal with Data
+        Data is stored in an xml file
+        Customized list must show icons, names and one or two subtitles
+        Nice and coherent design (You must do some reading?)
+
+    Data and XML = 20 marks
+    Activity functionality = 40 marks
+    Technical Contribution = 20 marks
+    Design Contribution = 20 marks
+    Deadline is Monday of week 9 at midnight = 7th November

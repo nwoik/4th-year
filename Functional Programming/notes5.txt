@@ -1,0 +1,44 @@
+Fun in Functional Programming:
+    Higher Order Functions
+        Definition
+        Applications/ Why are They Useful
+        List-based Examples
+
+    Definition
+        Higher Order Function (HOF)
+        Which has an argument or a return value which depends on the function
+
+        Apply_twice f a = f (f a)
+        Apply_twice succ 1 = 3
+        Apply_twice :: (a→ a) → a → a
+
+        F :: a → a → (a → a) 			– Not a higher order function
+
+        Map f as = [ f a | a ← as ]
+        Map :: (a → b) → [a] → [b]
+
+        Map f [] = []
+        Map f (a: as) = f a : Map f as
+
+        Successors :: [Int] → [Int]
+        Successors as = map succ as
+        Predecessors :: [Int] → [Int]
+        Predecessors as = map pred as
+
+        Examples:
+            all :: (a->Bool) -> [a] -> Bool
+            all even [2,4] = True
+            all odd [2,3] = False
+            all id [True, False] = False # Possibly and 
+
+        Cases:
+            all f [] = True 
+            all f (a:as) = f a && f as 
+
+            any :: (a->Bool) -> [a] -> Bool
+            filter :: (a->Bool) -> [a] -> [a]
+
+            filter p as = [a | a <- as, pred] 
+
+        flip :: (a -> b -> c) -> b -> a -> c
+        flip f b a = f a b             

@@ -1,0 +1,33 @@
+Non Linearity
+
+Polynomial Regression:
+    Underfitting:
+        Using a model that isn't complex enough to capture the data
+        A model underfits the training set if there is a more complex model with lower validation error
+
+    Overfitting:
+        When a model is too complex for the dataset
+        It finds regularity in the noise and picks up on quirks
+        A model overfits the training set if there is a less complex model with lower validation error
+
+    Diagnosis:
+        Easy:
+            Compute the training error and validation error 
+            If they're both high values, then it's underfitting
+            If the training error is low and the validation error is high, then it's overfitting 
+
+            Problems: 
+                High values are ambiguous.
+                Depending on the data set, an expert in the domain might be needed to verify
+
+        Validation curve:
+            x axis = number of examples used for training 
+            y = error 
+
+            If they converge high, then they're underfitting
+            If they don't converge then they're overfitting
+
+            If they converge low, then it's a best option
+
+
+

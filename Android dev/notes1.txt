@@ -1,0 +1,25 @@
+Android Intents:
+
+    Roughly equivalent to a procedure call in Java:
+        startActivity
+        sendBroadcast
+        startService
+        bindService
+
+    Initiating an Intent:
+        Intent myActivity = New Intent(action, data)
+        StartActivity(myActivity)
+
+    Secondary attributes for Intents
+
+    Using secondary attributes multiple examples
+
+    Need permissions if you are using browser or other stuff etc
+
+    Inter-Process Communication
+
+    Using Bundles to Pass Data
+    Very versatile objects
+    Passing the results back to the original activity
+
+    

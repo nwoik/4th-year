@@ -1,0 +1,52 @@
+Higher order Functions:
+    sort_by :: (a → a → Ordering) → [a] → [a]
+    sort_by compare [] = []
+    sort_by compare (a:as) = sort_by compare les
+                            ++ [a]
+                            ++ sort_by compare gts
+        where les = [a' | a' <- a, GT /= compare a' a]
+            gts = [a' | a' <- a, GT == compare a' a]
+
+Const
+    const :: a -> b -> a
+    const a _ = a 
+    hello :: b -> String
+    hello = const "Hello"
+
+Foldr
+    sum [a1,a2.....an] = a1 + (a2 + …. (an + 0))
+    product [a1,a2.....an] = a1 + (a2 + …. (an * 1))
+    and [a1,a2.....an] = a1 + (a2 + …. (an && True))
+    or [a1,a2.....an] = a1 + (a2 + …. (an || False))
+
+    a1 `f` (a2 `f` …. An `f` e)
+
+    foldr :: (a -> b -> b) -> b -> [a] -> b
+    foldr f b [] = b
+    foldr f b (a:as) = a `f` foldr f b as
+    
+    sum as = foldr (+) as
+
+
+    reverse :: [a] -> [a]
+    reverse [] = []
+    reverse (a:as) = reverse as ++ [a]
+    reverse a = foldr f b a
+        where b = []
+        	f :: a → [a] → [a]
+            f a b = b -> [a]
+
+    foldr f [] [0, 1, 2]
+        0 `f` (foldr f [] [1,2])
+            1 `f` (foldr f [] [2])
+                2 `f` (foldr f [] [])
+                    []
+
+    sort :: (ord a) => [a] -> [a]
+    sort as = foldr f b as
+        where b = []
+            f a as = insert a as 
+    
+
+
+

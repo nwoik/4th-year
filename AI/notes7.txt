@@ -1,0 +1,31 @@
+Model selection:
+    Done before error estimation 
+
+    Parameters and Hyperparameters:
+        Parameters are the variables that the model seeks to learn. Outputs of the algorithm
+        Hyperparameters are the inputs of the algorithm. These values that have to be chosen
+
+    Done wrong:
+        Randomly partition the dataset into training set and test set (e.g. 80%-20%).
+        Train the predictor on the training set using one set of hyperparameter values; test it on the test set.
+        If not happy with the MAE, train the predictor on the training set using a different set of hyperparameter values; test it on the test set.
+        Keep doing this until you are satisfied.
+
+        Wrong:
+            Form of leakage
+            Information about the test set is being used to develop the model
+
+    Done right:
+        Development set is split into the training set and validation set.
+        A Validation Set is used for testing to fine tune the hyperparameters 
+
+
+        This way the test set is never used throughout training of the model
+
+    Grid Search:
+        Test set is split off from data set 
+        Create preprocessor
+        Create a dictionary and put 
+
+    Final model is built on the entire data set 
+
