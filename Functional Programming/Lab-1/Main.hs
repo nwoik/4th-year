@@ -116,6 +116,7 @@ It checks if the length of the false and true lists is not 0.
 If they're both not 0, then there are both True and False in the list.
 Meaning it has opposites.
 -}
+
 has_opposites :: Int -> Bool
 has_opposites a = length [f | f <- apply_to_all a, f == False] /= 0
   && length [f | f <- apply_to_all a, f == True] /= 0
@@ -148,3 +149,5 @@ main = do
 
     print "[Task 11] has_opposites :: Int -> Bool. Entered: 3"
     print (has_opposites 3)
+
+  
