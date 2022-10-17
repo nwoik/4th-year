@@ -53,4 +53,15 @@ concatenations [[[0]],[[2]],[[5]]]
 concatenations ():[l1 | l1]:(l1:l1s),(l2:l2s),(l3:l3s)
 
 
+Examples
+k_ary_patterns 0 gives [(1,[]),(2,[]),...];
+k_ary_patterns 1 gives [(1,[[0]]),(2,[[0,0]]),...];
+k_ary_patterns 2 gives [(1,[[0],[1]]),(2,[[0,0],[0,1],[1,0],[1,1]]),...];
 
+signature
+k_ary_patterns :: Int -> [(Int, [[Int]])]
+
+cases
+k_ary_patterns n = [(1,[]),(2,[]),...(n, [])]
+k_ary_patterns n = ((a,bs):ts) 
+k_ary_patterns n = ((n,bs): k_ary_patterns n-1) 
