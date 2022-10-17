@@ -71,7 +71,7 @@ with a list comprehension of a in as where a is a list of list a.
 concatenations :: [[[a]]] -> [[a]]
 concatenations [] = []
 concatenations [as] = as
-concatenations ((b:bs):as) = [ b ++ l | b <- (b:bs), 
+concatenations ((b:bs):as) = [b ++ l | b <- (b:bs), 
         l <- concatenations [a | a <- as]]
 
 
@@ -80,7 +80,10 @@ concatenations ((b:bs):as) = [ b ++ l | b <- (b:bs),
 -}
 
 k_ary_patterns :: Int -> [(Int, [[Int]])]
-k_ary
+k_ary_patterns 0 = [];
+k_ary_patterns n = ((n,bs): k_ary_patterns (n-1))
+    where bs = [[n ^ n]]
+
 
 main = do
     print()

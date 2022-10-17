@@ -1,0 +1,50 @@
+(.) :: (b -> c) -> (a -> b) -> a -> c
+
+Sum and product:
+    foldr :: (a -> b -> b) -> b -> [a] -> b
+    foldr f b as = a1 `f` (... `f`(an `f` b))
+
+    foldr f b [] = b 
+    foldr f b (a:as) = a `f` foldr f b as 
+    sum as = foldr (+) 0
+    product as = foldr (*) 1 as
+
+
+Length with foldr:
+    foldr :: (a -> b -> b) -> b -> [a] -> b
+    length as = foldr f b as 
+        where f a b = b + 1
+        b = 0
+
+    f :: (a -> Int -> Int)
+    f a l = l + 1
+
+
+Example:
+    apply_all [succ, (+)2] 3 = [4, 5]
+    apply_all :: [a -> a] -> a -> a
+    apply_all gs a = foldr f a gs 
+        where f g a = g a 
+
+
+foldl:
+    foldl :: (b -> a -> b) -> b -> [a] -> b
+    foldl f as = (b `f` a1) `f` an
+
+    E.g sum. `f` = +
+    foldl f as = (b (+) a1) (+) an
+     
+    length as = foldr f [] as 
+        where f a as = as ++ [a]
+
+    reverse foldl
+    reverse as =  foldl f b as 
+        where f b a = a : b
+    
+    cases
+    foldl f b [] = b    
+    foldl f b (a:as) = foldl f (b `f` a) as
+        where f b a = a:b    
+
+
+    
