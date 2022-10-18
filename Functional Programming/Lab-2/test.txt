@@ -62,6 +62,4 @@ signature
 k_ary_patterns :: Int -> [(Int, [[Int]])]
 
 cases
-k_ary_patterns n = [(1,[]),(2,[]),...(n, [])]
-k_ary_patterns n = ((a,bs):ts) 
-k_ary_patterns n = ((n,bs): k_ary_patterns n-1) 
+k_ary_patterns n = () 
