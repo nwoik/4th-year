@@ -24,8 +24,8 @@ Polynomial Regression:
             x axis = number of examples used for training 
             y = error 
 
-            If they converge high, then they're underfitting
-            If they don't converge then they're overfitting
+            If the training error and the validation error converge high, then they're underfitting
+            If the training error is low and the validation error is high and don't converge then they're overfitting
 
             If they converge low, then it's a best option
 

@@ -78,22 +78,42 @@ concatenations [as] = as
 concatenations ((b:bs):as) = [b ++ l | b <- (b:bs), 
         l <- concatenations [a | a <- as]]
 
+
 {- Task 4
+There are no base cases because it's infinitely recurring.
+
+k_ary_patterns takes in an int and returns a list of tuples,
+containing an int and a list of lists of integers.
+
+
 
 -}
 
 k_ary_patterns :: Int -> [(Int, [[Int]])]
-k_ary_patterns n = 
-k_ary_patterns n = [(a, ls) | a <- take (n) [i | i <- [1..]]]
+k_ary_patterns n = (1, ls):
+    increment_n_concatenate 1 [[a] | a <- take n [1..]]
     where ls = take (n-1) [[j] | j <- [0..]]
 
+increment_n_concatenate :: Int -> [[Int]] -> [(Int, [[Int]])]
+increment_n_concatenate i p 
+    | null p = (i + 1, []): increment_n_concatenate (i + 1) []
+    | otherwise = (i + 1, c): increment_n_concatenate (i + 1) c
+    where c = concatenations [p, p]
 
 
-listOfNLists :: Int -> [[Int]]
-listOfNLists n = take n [[i] | i <- [0..]]
-
-listOfN :: Int -> [Int]
-listOfN n = take n [i | i <- [1..]]
-
-main = do
+main = do 
     print()
+    putStrLn $ concat [ "k_ary_patterns ", show kp_a, " = [ ", show $ kp_res !! 0, ",", show $ kp_res !! 1, show $ kp_res !! 2, "..]" ]
+    putStrLn $ concat ["concatenations " , show conc_a , " = ", conc_r ]
+    putStrLn $ concat ["selections " , show sel_a1, " ", show sel_a2
+                        , " = ", show sel_res]
+    putStrLn $ concat ["rev_bin_rep ", show rbr_a, " = " , rbr_res]
+    where rbr_a = 3
+          rbr_res = show $ rev_bin_rep rbr_a
+          kp_a = 3
+          kp_res = k_ary_patterns kp_a
+          sel_a1 = [0, 1, 3]
+          sel_a2 = [(0, 0), (1, 1), (2, 4 ), (3, 9)]
+          sel_res = selections sel_a1 sel_a2
+          conc_a = [[[0, 1]], [[2], [3]], [[4, 5]]]
+          conc_r = show $ concatenations conc_a

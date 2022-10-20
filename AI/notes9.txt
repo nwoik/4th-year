@@ -1,0 +1,44 @@
+Solutions for Overfitting and Underfitting:
+    Underfitting
+        Bigger datasets don't solve this and is time consuming.
+
+        Move to a more complex model. Be less severe with restrictions in the hypothosis
+        The model becomes more complex the more parameters you have. Gathering more features 
+        Feature engineering, the creation of more features from existing ones
+        If any restrictions are applied, lift them
+
+
+    Overfitting
+        Get more data, more noise might help smoothe out the curve by compensation
+        Remove the noise from the dataset.
+        Move to a less complex model 
+        Get rid of some less important features.
+        Add restrictions
+
+    Regularization/Constraints/Restrictions:
+        Regularization is the addition of constraints.
+        It's about constrainting the freedom of the model
+
+        Regularization for Linear regression:
+            Penalize the model if it fits the data too well. Low loss models are eliminated
+            
+            Lasso regression:
+                Mean squared error + L1 norm 
+                L1 norm = sum of the absolutes of the features
+
+                Models with low loss and big betas, get penailzed.
+
+                lambda is a hyperparameter
+                lambda controls the amount of regularization that's done
+
+                Feature selection happens because some of the betas become 0.
+        
+
+            Ridge regression:
+                Mean squared error + L2 norm 
+                L2 norm = sum of the absolutes, squared
+
+                Models with low loss and big betas, get penailzed.
+
+                
+

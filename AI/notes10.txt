@@ -1,0 +1,10 @@
+Cleaning data
+    Replacements are called imputations
+
+Data set exploration:
+    Use a copy of the dataset
+    Helps to find outliers 
+    Plot columns against each other
+
+Data preparation:
+    

@@ -1,0 +1,75 @@
+Higher Order Function:
+    map 
+        map :: (a → b) → [a] → [b]
+        map f as = [f a | a ← as]
+
+        map :: [a] → (a → b) → [b]
+
+        map succ :: (Enum a) => [a] → [a]
+        Num can be used for arithmetic
+        Enum has a predecessor and successor
+
+    flip
+        flip :: (b -> a -> c) -> a -> b -> c
+        flip f a b = f b a 
+        flip (:) :: [a] -> a -> [a]
+
+
+    foldr
+        foldr :: 
+        foldr f b [] = []
+        foldr f b (a:as) = f a $ foldr f b as
+
+        foldr (+) 3 [0,2,4] =
+            (+) 0 $ (+) 2 $ (+) 4 $ foldr (+) 3 []
+
+    copy
+        copy :: [a] -> [a]
+
+        copy as = foldr f b as
+            where b = 
+                f a as = (:) a as
+
+        a1 `f` a2 `f` an `f` b
+        a1: a2 : an : []
+
+        id :: a -> a 
+
+
+    iterate
+        iterate :: (a -> a) -> a -> [a]
+        iterate f a = [a `f` $ a `f` $ a .....]
+
+        iterate pred 4 = [4,3,2,1,0,4 ......]
+        iterate f a = a : [f fa | fa <- iterate f a]
+        iterate f a = a:map iterate a
+
+    takewhile/dropwhile
+        takewhile :: (a -> bool) -> [a] -> [a]
+        takewhile p [] = []
+        takewhile p (a:as) | p a = a:takewhile p as 
+            | otherwise = []
+
+        dropwhile :: (a -> bool) -> [a] -> [a]
+        dropwhile p [] = []
+        dropwhile p (a:as) | p a = dropwhile p as 
+            | otherwise = a:as
+
+
+    filter
+        filter :: (a -> bool) -> [a] -> [a]
+
+        filter p as = [a | a <- as, p a] -- list comprehension definition 
+
+        -- recursive definition
+        filter p [] = []
+        filter p (a:as) | p a = a:filter p as
+                        | otherwise filter p as
+
+
+    nub 
+        nub :: (Eq a) => [a] -> [a]
+        nub [] = []
+        nub (a:as) = a : nub f 
+            where f = filter (a /=) as
+

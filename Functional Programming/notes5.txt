@@ -6,6 +6,7 @@ Fun in Functional Programming:
 
     Definition
         Higher Order Function (HOF)
+        Takes another function as a parameter
         Which has an argument or a return value which depends on the function
 
         Apply_twice f a = f (f a)
