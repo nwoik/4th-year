@@ -1,0 +1,58 @@
+Folds:
+    ["Rushi", "Boris", "Rushi"] -> [(1, "Boris"), (2, "Rushi")]
+
+    sort :: (Ord a) => [a] -> [a]
+
+    Ord class
+        compare :: (Ord a) => a -> a -> Ordering
+
+    sort_by :: (a -> a -> Ordering) -> [a] -> [a]
+
+    sort_by compare as = 
+        sort as
+        where sort as = ...
+
+    
+    compare_by_fst :: (a -> a -> Ordering) => (a, b) -> (a, b) -> Ordering
+    compare_by_fst compare (a, _) (a', _) = compare a a'
+    
+
+    sort_by (compare_by_fst (flip compare))
+
+    flip :: (a -> b -> c) -> b -> a -> c
+    nub :: (Eq a) => [a] -> [a]
+    (.) :: (b -> c) -> (a -> b) -> (a -> c)
+    (.) f g a = f (g a)
+
+    count_occurences :: (Eq a) => [a] -> [(Int, a)]
+    count_occurences as = [(occurences a as, a) | a <- nub as]
+        where occurences a as = length . filter (== a) as
+
+Application:
+
+
+
+Data type definitions:
+    type String = [Char]
+    type MaleName = [Char]
+    type FemaleName = [Char]
+    type List a = [a]
+    type Assoc a b = (a, b)
+
+Algebraic Data Type (ADT) Definitions:
+    data Bool = False | True
+    
+    data Singleton a = Singleton a
+    
+    single_to_val :: Singleton a -> a
+    single_to_val (Singleton a) = a
+
+    Singleton {from_singleton a}
+
+    data Maybe a = Nothing|Just a 
+
+    isJust :: Maybe a -> Bool
+    isJust (Just _) = True
+    isJust _ = False
+
+    
