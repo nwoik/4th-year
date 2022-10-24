@@ -41,10 +41,10 @@ The tail of the list is a recursive call,
 with the tails of both lists is and ts.
 
 Else if the fst t isn't equal to i,
-then selections is called with ts
-and the tail of is to move the tuples along.
-Else then selections is called with is
-and the tail of ts to move the indices along.
+then selections is called with is
+and the tail of ts to move the tuples along.
+Else then selections is called with ts
+and the tail of is to move the indices along.
 -}
 
 selections :: [Int] -> [(Int, Int)] -> [Int]
