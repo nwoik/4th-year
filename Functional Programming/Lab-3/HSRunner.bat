@@ -1,0 +1,1 @@
+ghci .\Main.hs

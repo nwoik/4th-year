@@ -1,0 +1,99 @@
+Classification:
+    Prediction of a discrete class from a finite set of classes
+
+    Notation:
+        x : object/class
+        y : actual class label
+        y' : predicted class label 
+        C : set of labels
+
+    Difference with regression:
+        Finite set of values
+        Numbers have no meaning. There's no difference between 1 and 2 if the desired output is 3. 
+
+    Variation of Classification:
+        Probability distribution
+        Probability with 2 classes can be represented by 1 value
+        arg max takes the object with the highest value 
+
+    Types of Classification:
+        Binary Classification:
+            Takes in 2 classes
+            0 is the negative class 
+            1 is the positive class 
+            The one that requires special action is the positive class
+
+        Multiclass Classification:
+            When there are more than 2 classes
+
+        Multilable Classification:
+            The class can assign more than 1 label to more than one class 
+
+        Ordered Classification:
+            There's an ordering on the classes
+            The numbers have meaning 
+
+    Classification plotting:
+        The examples are distinguised by colour
+    
+    Instance based Classification:
+        KNN classifier: (For Binary)
+            Majority vote
+            The amount of neighbours are odd
+            The decision is based off the outcome of it's neighbours
+            
+            Weighted KNN:
+                The more similar features count for more in the vote
+
+            Prediction does all the work
+            fit() does nothing in Instance based Classification 
+
+
+    Model based Classification:
+        Logistic regression:
+            Linear Classification
+            Finds the line that seperates the data best        
+            Outputs the probability that an example belongs to a class 
+
+            If linear regression is only used, the output might not be a probability
+            The values must be squashed using the sigmoid function between 0 and 1
+            Prob(y' = 1|x) = sigma(xB) = 1/1+e^-xB
+            S shaped function
+
+            Binary Cross entropy Loss function:
+                If it outputs high probabilities for negative examples, then it's bad   
+                It's given a high loss cause it thinks it's a positive example
+                If it outputs low probabilities for positive examples, the it's also bad 
+                It's given a high loss cause it thinks it's a positive example
+
+                A log function is used 
+                
+                -yLog(hB(x)) + -(1 - y)Log(1 -hB(x))
+
+                J(X, y, B) # J is the average
+
+                The loss function is found using gradient descent
+
+                c = 1/alpha
+
+
+        Multinomial Logistic regression:
+            Using the Softmax function,
+            Not only must the numbers squashed between 0 and 1
+            It must make sure the probabilities sum to 1
+    
+            Cross entropy Loss function 
+
+        One versus Rest:
+            Multiple Binary classifiers are trained
+            The one with the highest probability wins
+
+        1v1:
+            A Binary classifier is made for each pair of classifiers
+            (n*(n-1))/2
+            The whole data set isn't used
+            Only the ones the pairs that are involved
+
+            
+            
+

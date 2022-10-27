@@ -1,0 +1,45 @@
+ADTs:
+    data ABC = A|B|C 
+    f::ABC -> ABC
+    f A = B 
+    f B = C 
+    f _ = A 
+
+    data Pair a = Pair a a
+
+    fst :: Pair a b -> a
+    fst (Pair a _) = a
+
+    data Pair a b = Pair {fst' :: a, snd' :: b}
+
+    fromMaybe :: Maybe a -> a 
+    fromMaybe (Just a) = a 
+    maybe :: a -> Maybe a -> a 
+    maybe _ (Just a) = a 
+    maybe a _ = a 
+
+    has_one :: Maybe Int -> Bool 
+    has_one (Just 1) = True 
+    has_one _ = False
+
+    data Maybe a = Nothing
+                | Just {fromMaybe :: a}
+
+    safe_division :: Int -> Int -> Maybe Int 
+    safe_division _ 0 = Nothing
+    safe_division a b = Just (quot a b)
+
+
+    data Num = Z | S Num
+    [Z, SZ, S(SZ) ..]
+    iterate :: a -> (a -> a) -> a
+    iterate Z S
+    
+    add :: Num -> Num -> Num 
+    add 0 n = n
+    add n 0 = n
+    add S(m) n = S(add m n)
+
+    sub :: Num -> Num -> Num 
+    sub n 0 = Just n 
+    sub 
