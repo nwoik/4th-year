@@ -1,0 +1,71 @@
+Flight:
+    date
+    flightNumber
+    price
+    departure
+    arrival
+    pilot 
+    coPilot
+    manifest
+    seats
+
+    cancel()
+    delay()
+
+Airport:
+    name
+    airportCode 
+    city
+
+City:
+    name 
+    country
+    countryCode 
+
+Airline:
+    name 
+    country
+    airlineCode
+    planesOwned
+    planesLeased
+    own(Airplane)
+    lease(Airplane)
+
+Airplane:
+    flight 
+    model
+    registrationCode
+    hoursFlown
+    land()
+    takeoff()
+    refuel()
+    repair()
+
+Pilot:
+    fly(Flight)
+    co-pilot(Flight)
+    retire()
+
+Staff:
+    createFlight()
+    updateFlight(Flight)
+    hire(Pilot)
+    fire(Pilot)
+    createManifest(Flight)
+    updateManifest(Flight)
+
+Passenger:
+    name
+    address
+    dateOfBirth
+    passportNumber
+    reserve(Flight)
+    pay(Flight)
+    cancel(Flight)
+    
+    board(Flight)
+    disembark(Flight)
+    book(Seat, Flight)
+
+Seat:
+    number

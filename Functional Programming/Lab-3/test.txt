@@ -1,0 +1,7 @@
+foldl f a (b:bs)
+    where f a b = compare a b ++ [] 
+
+
+compare 2 [1,2,3,4,5]
+
+compare 2 (1:[2,3,4,5]) = 2 compare ()

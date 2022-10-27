@@ -1,0 +1,8 @@
+for include:
+    When the base use case is executed, the included use case is executed EVERYTIME.
+    The base use case required the completion of the included use case in order to be completed.
+
+for extend:
+    When the base use case is executed, the extended use case is executed only SOMETIMES
+    The extended use case will happen only when certain criteria are met.
+
