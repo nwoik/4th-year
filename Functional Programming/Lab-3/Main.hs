@@ -38,9 +38,10 @@ variable a and as.
 This continues until the base case is met.  
 -}
 
-select :: Ord a => (a -> a -> Ordering) -> a -> [a] -> [a]
+-- select :: Ord a => (a -> a -> Ordering) -> a -> [a] -> [a]
+select :: (a -> a -> Ordering) -> a -> [a] -> [a]
 select f a [] = []
-select f a as = filter (\f -> a /= GT) as
+select f a (a':as) = filter (\x -> f a a' /= GT) as
 
 
 {- Task 2
@@ -81,13 +82,13 @@ applied to comparator compare, 1 and (a:as).
 Else
 -}
 
-select_equivalents :: Int -> [Int] -> [Int]
-select_equivalents i [] = []
-select_equivalents i (a:as) = 
-    if odd i then filter odd os
-    else filter even es
-        where os = select compare 1 (a:as)
-              es = select compare 2 (a:as)
+-- select_equivalents :: Int -> [Int] -> [Int]
+-- select_equivalents i [] = []
+-- select_equivalents i (a:as) = 
+--     if odd i then filter odd os
+--     else filter even es
+--         where os = select compare 1 (a:as)
+--               es = select compare 2 (a:as)
 
 
 main :: IO ()
