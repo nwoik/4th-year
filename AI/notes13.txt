@@ -1,0 +1,33 @@
+Accuracy:
+    Problems:
+        The costs of error aren't equal.
+        It only returns a single number and tells how well it does overall rather than how well it does on each class 
+        The way to remedy this is to make a cost sensitive variant
+
+        If the classes aren't well balanced, it does well on the class that's more prevelant doesn't mean that it does well on less prevelant ones.
+
+        If the performance is close to the probability of guessing, then the classifier isn't learning anything.
+
+    Confusion Matrix:
+        Breaks the performance down into different types of errors
+        Diagonal are things that was got right
+        The Diagonal values/the total examples = Accuracy
+
+    Majority Class Classifier:
+        Always predicts the majority class 
+        It's a baseline classifier
+        It's used to compare against real models. 
+        If it performs better than this classifier, then they're doing well.
+
+    Stratification:
+        Divide the dataset into positive examples and negative examples
+        Randomly partition positive into training and testing
+        Randomly partition negative into training and testing
+        Do a union of both the N training and P training
+        Do the same for the testing sets
+
+    When comparing the training and validation sets, the logic of over and underfitting are flipped
+    Over fitting is when training accuracy is much higher than the validation accuracy 
+    Underfitting is when both training accuracies are both low
+    
+

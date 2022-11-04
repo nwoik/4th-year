@@ -8,46 +8,24 @@ module Main where
 
 
 {- Task 1
-select takes in a compare function, an a variable and a list of a's,
-and returns a list of a's.
+select takes in a compare function, an a variable and a list of a values,
+and returns a list of as.
 
-Base case:
-select f a [] = []
-
-Using foldl,
-foldl takes in function f, variable a 
-and list of (a':as) where a' is the head of the list.
-The base case of foldl is if list (a':as) is [] return [].
-
-Using if statements,
-if the f of variable a and a' is not greater than,
-then a is passed in as the head of the returned list
-and the tail is a function call of foldl with function f, 
-variable a and as.
-
-If the f of a and a' is equal,
-then it's a tie meaning it doesn't matter which one is passed in as
-the head. The tail is a function call of foldl with function f, 
-variable a and as.
-
-Else a' is preferred over a if a is greater than a'.
-The resulting list has a' as the head and the tail is
-a function call of foldl with function f, 
-variable a and as.
-
-This continues until the base case is met.  
+The returned list is made by applying the filter function to a predicate
+and the list as. 
+The predicate is applied to a' from the list as 
 -}
 
 select :: Ord a => (a -> a -> Ordering) -> a -> [a] -> [a]
-select f a [] = []
-select f a as = filter (\f -> a /= GT) as
+select f a as = filter prd as
+    where prd a' = f a' a /= GT  
 
 
 {- Task 2
 
 -}
 
-compare_with_tie_breaker :: (a -> a -> Ordering) -> (a -> a -> Ordering) -> (a -> a -> Ordering)
+compare_with_tie_breaker :: Ord a =>  (a -> a -> Ordering) -> (a -> a -> Ordering) -> (a -> a -> Ordering)
 compare_with_tie_breaker compare compare' = function
     where function a a' = if compare a a' == EQ then compare a a'
                             else compare' a a'
@@ -59,10 +37,20 @@ compare_with_tie_breaker compare compare' = function
 -}
 
 
+is_minimum :: Ord a => (a -> a-> Ordering) -> a -> [a] -> Bool
+is_minimum f a as = if length (filter prd as) == 0 then True
+                    else False
+                         where prd a' = f a' a == LT
+
+
+
 {- Task 4
 
 -}
 
+select_minima :: Ord a => (a -> a-> Ordering) -> [a] -> [a]
+select_minima f as = filter prd as
+                       where prd a' = is_minimum f a' as == True
 
 {- Task 5
 select_equivalents takes an int and a list of ints 
@@ -82,14 +70,18 @@ Else
 -}
 
 select_equivalents :: Int -> [Int] -> [Int]
-select_equivalents i [] = []
-select_equivalents i (a:as) = 
-    if odd i then filter odd os
-    else filter even es
-        where os = select compare 1 (a:as)
-              es = select compare 2 (a:as)
+select_equivalents i as = 
+    if odd i then filter odd result
+    else filter even result
+        where result = select compare' i as
+
+
+compare' :: Int -> Int -> Ordering
+compare' a a' = if odd a && odd a' then LT
+                else if even a && even a' then LT
+                else GT
 
 
 main :: IO ()
 main = do
-    print()
+    

@@ -1,0 +1,47 @@
+Decision trees:
+    Regression tree:
+        samples = number of examples in the dataset
+        Gini: 
+            How pure a node is
+            Runs from 0-0.5
+            0 is completely pure (1 class)
+            The more depth a tree has, the more pure the nodes become
+            Limiting the tree depth avoids overfitting
+            Depth is a hyper parameter
+
+            The same method of finding out if over or underfitting
+
+    Classification tree:
+        CART Algorithm (recursive):
+            Amount of questions = n
+            Decide the question in the root of the tree by getting the question with the purest children by scoring them
+            Recursivaly continue this on it's children starting with the left child 
+            The Algorithm stops when it either hits a node at the depth pass in or a child at gini 0
+
+    The amount that learning takes is irrelevant. Prediction is time critical
+
+    Trees is an example of non parametric learning 
+
+    Interpretability:
+        The tree can be display the tree and people can see what has been learned
+        KNN is also included
+
+Ensemble:
+    Instead of having 1 model, we have a collection of models
+    Run all the models and take a vote of their results
+
+    Advantages:
+        Weak learning algorithms can become stronger in a collective
+        
+    Bagging:
+        A collection of the same types of models
+
+        Multiple versions of the same sized datasets from the original dataset are created at random with duplicates allowed.
+        Multiple models are trained on all the new datasets
+
+
+
+
+            
+
+

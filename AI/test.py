@@ -12,6 +12,8 @@ features = ["flarea", "bdrms", "bthrms"]
 
 houses = data_frame[features].values
 
+data_frame.insert(1,"flbd", data_frame["flarea"]*data_frame["bdrms"])
+
 def euc(x, xp):
     return np.sqrt(np.sum((x-xp)**2))
 
