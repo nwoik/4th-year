@@ -1,7 +1,7 @@
 {-
 - Name: David Nwokoye
 - Number: 119380051
-- Assignment: 02
+- Assignment: 03
 -}
 
 module Main where
