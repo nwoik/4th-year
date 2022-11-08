@@ -10,7 +10,10 @@ module Main where
 
 -}
 
-data BST = Null | Node Int (BST) (BST) deriving (Show)
+data BST = Leaf | Node {root::Int, 
+                        leftchild::BST, 
+                        rightchild::BST} 
+                        deriving (Show)
 
 
 {- Task 2
@@ -25,10 +28,11 @@ create = Null
 
 -}
 
+
 pretty_print :: BST -> [Int]
 pretty_print (Node a l r)
-  | r /= Null = pretty_print r
-  | l /= Null = pretty_print l
+  |  root r = pretty_print r
+  | root l == root r = pretty_print l
   | otherwise = (a:[])
 
 
@@ -39,10 +43,10 @@ pretty_print (Node a l r)
 -}
 
 contains :: BST -> Int -> Bool
-contains (Node a' t1 t2) a
+contains (Node a' leftchild rightchild) a
     | compare a' a == EQ = True
-    | compare a' a == GT = contains t1 a
-    | compare a' a == LT = contains t2 a
+    | compare a' a == GT = contains leftchild a
+    | compare a' a == LT = contains rightchild a
 
 
 {- Task 6
