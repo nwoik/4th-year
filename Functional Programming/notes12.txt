@@ -1,5 +1,20 @@
-module Example where 
-import Data.Char (ord, chr)
+"hello world!"
+"ifmmp Wpsme!" shift 1
+"jgnnq Wrtnf!" shift 2
+
+O [fa, fb, .....]
+e [ea, eb, .....]
+
+((fa - ea)^2)/ea 
+
+
+
+import Data.Char(Ord, Chr, isLower)
+
+map ord "abcd"
+
+positions :: (Eq a) => a -> [a] -> [Int]
+positions a as = [i | (i, a) <- zip [0..] as, a' == a]
 
 letter_to_int :: Char -> Int 
 letter_to_int c = ord c - ord 'a'
@@ -14,6 +29,9 @@ shift i c = chr $ ((ord c - ord 'a') + i) `mod` 26
 encode :: Int -> String -> String
 encode n = map (shift n) 
 
+table :: [Float]
+table = [8.2, 5.1, ...]
+
 percentage :: Int -> Int -> Float
 percentage m n = (fromIntegral m / fromIntegral n) * 100
 
@@ -21,6 +39,3 @@ count :: Char -> String -> Int
 count c cs = length [c' | c' <- cs, c' == c]
 count c cs = length (filter prd cs)
     where prd c' = c' == c
-
-main = do
-    print()

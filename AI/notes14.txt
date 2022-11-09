@@ -1,0 +1,27 @@
+Neural Networks:
+    Every neuron has a bias
+    z = b + xw
+
+    Activation function g
+        Linear activation: g(z) = z 
+        Sigmoid activation: g(z) = 1/1+e^z
+        ReLU activation: g(z) = 𝑚𝑎𝑥(0,𝑧)
+        tanh activation: 𝑔(𝑧) = tanh(𝑧)
+
+    Layers of Neurons:
+        Every input is connected to every neuron. 
+        n neurons and p inputs means there will be n*p wires
+        G is applied elementwise
+        The final output is the Target value
+
+        Input layer: where the input values are added (not a layer)
+        Hidden layer: All the layers between input and output
+        Output layer: The neuron that outputs the target valye
+
+        Amount of layers is a hyperparameter
+
+        Feed forward: All outputs move up, there are no cycles
+
+        Finds successive layers of representation of vectors.
+        It finds new features
+
