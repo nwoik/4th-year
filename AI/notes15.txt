@@ -1,0 +1,25 @@
+Keras Library:
+    Built layer by layer
+    Input layer is determined by the number of features
+    Non linear models are used for hidden layer functions
+    Output layer is determined by the task. 
+        It's linear activation function for regression g(z) = z
+        It's sigmoid activation function for binary classification
+        It's softmax activation function for multiclass
+
+    Specify the function for compilation:
+        Regression: Mean squared error (mse)
+        Binary classification: Binary cross entropy
+        Multiclass classification: Cross entropy
+
+    Optimizer:
+        Gradient descent (SGD)
+        Sticastic = 1
+        Batch = size of dataset
+        Mini Batch = between 1 and (size of dataset)
+        Simulated annealing -> changing the learning rate
+
+    Metrics for testing:
+        Mean absolute error for testing (mae)
+        Accuracy for classification
+
