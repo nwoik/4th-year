@@ -6,18 +6,22 @@
 
 module Main where
 
-{- Task 1
 
+{- Task 1
+The Binary Search Tree (BST) can be null
+or be a node made up of the root which is an int, 
+the left child and right child.
+Both of the children are BSTs that can be null or it's own sub tree.
 -}
 
-data BST = Leaf | Node {root::Int, 
+data BST = Null | Node {root::Int, 
                         leftchild::BST, 
                         rightchild::BST} 
                         deriving (Show)
 
 
 {- Task 2
-
+create initializes an empty binary search tree with the root as null.
 -}
 
 create :: BST
@@ -28,12 +32,19 @@ create = Null
 
 -}
 
+indent :: String -> String
+indent = ("  "++)
 
-pretty_print :: BST -> [Int]
-pretty_print (Node a l r)
-  |  root r = pretty_print r
-  | root l == root r = pretty_print l
-  | otherwise = (a:[])
+
+pretty_print :: BST -> String
+pretty_print Null = []
+pretty_print (Node root leftchild rightchild) 
+         = "LL"++ (pretty_print leftchild) ++ show root++"\n" ++ "RR"++ (pretty_print rightchild)
+
+
+{- Task 4
+
+-}
 
 
 
@@ -73,4 +84,4 @@ main = do
 
     putStrLn ""
     
-    print(pretty_print (fromList [3,5,1,6,4,2,0]))
+    putStr (pretty_print (fromList [3,5,1,6,4,2,0]))

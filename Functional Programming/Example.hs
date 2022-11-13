@@ -5,8 +5,8 @@ import Data.Char (ord, chr)
 -- letter_to_int c = ord c - ord 'a'
 
 
--- int_to_letter :: Int -> Char 
--- int_to_letter i = chr (i + ord 'a')
+int_to_letter :: Int -> Char 
+int_to_letter i = chr (i + ord 'a')
 
 -- shift :: Int -> Char -> Char
 -- shift i c = chr $ ((ord c - ord 'a') + i) `mod` 26
