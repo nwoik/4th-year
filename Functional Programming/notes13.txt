@@ -1,0 +1,35 @@
+"Hello world"
+"Hfmmp xpsme"
+
+((e - o)^2)/e for all es and os
+o : freq input
+e : expected freq
+
+frequencies :: String -> [Float]
+frequencies cs = [percentage (count $ cs) | c <- ['a'..'z']]
+    where len = length cs
+
+percentage :: Int -> Int -> Float
+percentage a b = (a/b) * 100
+
+es = [.25, .75]
+os = [.2, .8]
+
+chi_square_statistic :: [Float] -> [Float] -> Float
+chi_square_statistic os es = sum [f o e | o e < zip os es]
+    where f o e = percentage (e - o)^2 e 
+
+zipWidth :: (a -> b -> c) -> [a] -> [b] -> [c]
+zipWidth f as bs = map f' (zip as bs)
+    where f' (a, b) = f a b 
+
+rotate :: Int -> [a] -> [a]
+rotate s as = drop s as ++ take s as
+
+crack :: String -> String 
+crack cs = encode (factor) cs 
+    where factor = head $ positions (minimum chitab) chitab
+          chitab = [chi_square_statistic (rotate n table') table | n <- shifts]
+          shifts = [0.. length table -1]
+          table' = frequencies cs
+

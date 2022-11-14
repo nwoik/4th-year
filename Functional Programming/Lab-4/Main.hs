@@ -14,9 +14,9 @@ the left child and right child.
 Both of the children are BSTs that can be null or it's own sub tree.
 -}
 
-data BST = Null | Node {root::Int, 
-                        leftchild::BST, 
-                        rightchild::BST} 
+data BST = Null | Node {root::Int,
+                        leftchild::BST,
+                        rightchild::BST}
                         deriving (Show)
 
 
@@ -32,14 +32,16 @@ create = Null
 
 -}
 
-indent :: String -> String
-indent = ("  "++)
-
+indent :: [String] -> [String]
+indent = map ("  "++)
 
 pretty_print :: BST -> String
-pretty_print Null = []
-pretty_print (Node root leftchild rightchild) 
-         = "LL"++ (pretty_print leftchild) ++ show root++"\n" ++ "RR"++ (pretty_print rightchild)
+pretty_print bst = concat $ (make_tree bst)
+
+make_tree :: BST -> [String]
+make_tree Null = []
+make_tree (Node root leftchild rightchild)
+         = indent (make_tree leftchild) ++ ([show root] ++ ["\n"]) ++ indent (make_tree rightchild)
 
 
 {- Task 4
@@ -55,9 +57,9 @@ pretty_print (Node root leftchild rightchild)
 
 contains :: BST -> Int -> Bool
 contains (Node a' leftchild rightchild) a
-    | compare a' a == EQ = True
-    | compare a' a == GT = contains leftchild a
-    | compare a' a == LT = contains rightchild a
+    | a' == a = True
+    | a' > a = contains leftchild a
+    | a' < a = contains rightchild a
 
 
 {- Task 6
@@ -83,5 +85,5 @@ fromList as = foldl insert Null as
 main = do
 
     putStrLn ""
-    
+
     putStr (pretty_print (fromList [3,5,1,6,4,2,0]))
