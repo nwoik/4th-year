@@ -1,0 +1,66 @@
+Classes
+    A collection of tupes
+    defines functions
+    ad hoc polymorphism
+
+    class statement to make a class
+    extend a class with the instance statement 
+
+
+Class definitions
+    class Eq a where
+        (==) :: a → a → Bool
+        (/=) :: a → a → Bool
+    Default implementation (/=) a b = not $ a == b
+    Default implementation (==) a b = not $ a /= b
+
+    instance Eq Bool where
+        (==) False False = True
+        (==) True True = True
+        (==) _ _ = False
+        (/=) a b = not $ a == b
+
+    Data AB = A | B
+    instance Eq AB where
+        (==) A A = True
+        (==) B B = True
+        (==) _ _ = False
+        (/=) a b = not $ a == b
+
+
+
+    Class (Eq a) => Ord a where
+        (<), (>), (<=), (>=) :: a → a → Bool
+        Min, max :: a → a → a
+        Compare :: a → a → Ordering
+        (<) a b = compare a b == LT
+        (>) a b = compare a b == GT
+        Min a b | a <= b = a
+            | otherwise = b
+
+
+    Instance Od Bool where
+        Compare False False = EQ
+        Compare True True = EQ
+        Compare _ False = GT
+        Compare _ _ = LT
+
+
+    Data Bool = False | True
+        Deriving (Eq, Ord, Show, Read)
+
+    Class Name (Type a, … an)
+
+    Class Ex a where
+        Pretty_print :: a → String
+        Example1 :: (Eq b) => a → b → String
+        Example2 :: a → b → String
+
+    Instance :: (Eq a) => EQ [a]
+    (==) [] [] = True
+    (==) (a:as) (a’:as’) = a == a’ && as == as’
+    (==) _  _  = False
+
+
+    Data A = A
+        [A] == [A,A]

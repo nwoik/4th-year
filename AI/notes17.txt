@@ -1,0 +1,30 @@
+Overfitting Neural nets:
+    Reduce complexity:
+        Use less neurons
+        Use less layers
+        Reduces the amount of parameters
+
+    Regularization (add constraints):
+        Exclude the biases.
+        Only regularize the weights 
+        Mainly used on smaller Networks
+
+    Dropout:
+        Hyperparameter: Dropout rate 
+        Between 0-1. Probability of something being dropped
+
+        Happens during training, some neurons get dropped 
+        Dropped means the output of that neuron is ignored.
+        On the backwards pass, the weights of neurons that don't contribute aren't changed
+        because they had no part in contributing to the error
+
+        The outputs of neurons that contribute are multiplied by 1/1-p to compensate for the lack of output 
+
+        Why it works:
+            Each neuron becomes less specialized. This helps because overfitting happens when neurons wiggle through the noise
+            It's like dynamically having different neural nets and averaging their outputs. Ensemble
+
+        Early Stopping:
+            The training is interrupted when the validation error has stopped decreasing
+            patience is like a threshold, the amount of epochs that pass with no improvement
+

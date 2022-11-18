@@ -1,0 +1,48 @@
+Gradient Descent for Neural Networks:
+    epoch is a hyper parameter
+
+    Changing the weights and biases
+    Use derivative of the loss function 
+    Do it batch by batch 
+
+    Random weight and biases
+    Make predictions for all the training examples
+
+
+    Problems:
+        There are no target outputs for the outputs of the hidden layer
+        It's hard to know how right or wrong the answer is thus making it impossible to know how the values should be tweaked
+
+    Solution:
+        We assume that each neuron is responsible for part of the loss in the function 
+        The neurons to blame are the ones with the highest activation values
+
+        Forward pass:
+            Make a batch of predictions
+
+        Backward pass:
+
+    Autodiff:
+        Automatically gets the derivative of the loss function 
+
+    Vanishing Gradient Problem:
+        The changes get smaller and smaller to the point where it makes no difference
+
+    Non Saturation:
+        Avoid sigmoid
+        When a large number is passed into sigmoid, the number is close to 0 so no change is made
+        Use RalU instead
+
+    Better Random Initialization:
+        Use Glorot
+
+    Batch Normalization:
+        Without scaling, it's hard to differenciate
+        Scale both the inputs and outputs of each layer (except final layer of course)
+        You can use sigmoid if you use this. Solves sigmoid problem 
+        Solves randomization problem 
+        Learning rate issue is also solved
+        Solves the overfitting problem 
+    
+
+
