@@ -1,0 +1,36 @@
+Convolutional Neural Networks:
+    2 dimensional arrays are passed in as the input 
+
+    Information is destroyed when the input it flattened.
+
+    Depth of grayscale images are 1
+
+    For colored pictures, a rank 3 tensor is passed in 
+    The depth is 3 for RGB values
+
+
+    kernel size 
+    The neuron is connected to a 3x3 neuron
+    Neuron connections have overlapping connections.
+
+    Corresponding  wieghts on different neurons are the same
+
+    Parameters are weights and biases 
+
+
+Max Pooling:
+    The goal of max pooling is to make the network smaller
+    Advantage:
+        Fewer parameters helps with overfitting
+        Faster computation
+        Less memory used 
+
+    Max pooling neurons don't usually overlap 
+
+    No weights in max pooling 
+
+    It takes the makew of the pooling
+
+
+
+

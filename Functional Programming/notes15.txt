@@ -1,0 +1,34 @@
+data Colour = Red | Yellow | Blue
+data Op = Add | Sub | Mul | Div 
+
+instance Show Op where
+    show Add = "+"
+    show Sub = "-"
+    show Mul = "*"
+    show Div = "/"
+
+valid :: Op -> Int -> Int -> Bool 
+valid Div _ 0 = False
+valid Sub a b = a >= b
+valid _ _ _ = True 
+
+apply :: Op -> Int -> Int -> Int 
+apply Add a b = a + b
+apply Sub a b = a - b
+apply Mul a b = a * b
+apply Div a b = a / b
+
+data Expr = Val Int | Expr Op Expr Expr
+
+instance Show Expr where
+    show (Val a) = show a
+    show (apply op a b) = "(" ++ show a ++ show op ++ show b ++ ")"
+
+values :: Expr -> [Int]
+values (Val a) = [a]
+values (App _ a b) = values a ++ values b 
+
+eval :: Expr -> [Int]
+eval (Val a) = [a]
+eval (App op a b) = Val a ++ Val b 
+

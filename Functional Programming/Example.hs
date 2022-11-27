@@ -32,5 +32,7 @@ zipWidth :: (a -> b -> c) -> [a] -> [b] -> [c]
 zipWidth f as bs = map f' (zip as bs)
     where f' (a, b) = f a b 
 
+
+
 main = do
     print()

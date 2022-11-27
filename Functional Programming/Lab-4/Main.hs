@@ -3,6 +3,7 @@
 - Number: 119380051
 - Assignment: 04
 -}
+{-# LANGUAGE InstanceSigs #-}
 
 module Main where
 
@@ -14,16 +15,22 @@ the left child and right child.
 Both of the children are BSTs that can be null or it's own sub tree.
 -}
 
-data BST = Null | Node {root::Int,
-                        leftchild::BST,
-                        rightchild::BST}
+data BST a = Null | Node {root::a,
+                        leftchild::BST a,
+                        rightchild::BST a}
+
+
+instance Show a => Show (BST a) where
+    show :: Show a => BST a -> String
+    show Null = "\n"
+    show bst = concat $ (make_tree bst)
 
 
 {- Task 2
 create initializes an empty binary search tree with the root as null.
 -}
 
-create :: BST
+create :: BST a
 create = Null
 
 
@@ -55,13 +62,13 @@ make_tree applied to the rightchild.
 This creates a list of string elements of the tree. 
 -}
 
-pretty_print :: BST -> String
+pretty_print :: Show a => BST a -> String
 pretty_print bst = concat $ (make_tree bst)
 
 indent :: [String] -> [String]
 indent = map ("  "++)
 
-make_tree :: BST -> [String]
+make_tree :: Show a => BST a -> [String]
 make_tree Null = []
 make_tree (Node root leftchild rightchild)
          = indent (make_tree leftchild) ++
@@ -70,11 +77,12 @@ make_tree (Node root leftchild rightchild)
 
 
 {- Task 4
+Uses the show defined in the instance.
 
 -}
 
--- pretty_print' :: BST -> String
--- pretty_print' bst = show bst
+pretty_print' :: Show a => BST a -> String
+pretty_print' bst = show bst
 
 
 {- Task 5
@@ -93,7 +101,7 @@ This continues until either compare root a returns EQ, making it True,
 or the base case is reached making it False.
 -}
 
-contains :: BST -> Int -> Bool
+contains :: Ord a => BST a -> a -> Bool
 contains Null a = False
 contains (Node root leftchild rightchild) a
     | compare root a == EQ = True
@@ -120,7 +128,7 @@ This carries on until the base case is reached
 -}
 
 
-insert :: BST -> Int -> BST
+insert :: Ord a => BST a -> a -> BST a
 insert Null a = Node a Null Null
 insert (Node root left right) a
     | compare root a /= GT = Node root (insert left a) right
@@ -140,7 +148,7 @@ This creates the BST tree.
 -}
 
 
-from_list :: [Int] -> BST
+from_list :: Ord a => [a] -> BST a
 from_list as = foldl insert Null as
 
 
@@ -158,16 +166,14 @@ main = do
     let bst5 = from_list [2,1,0]
     let bst6 = from_list [2,0,1]
 
-    putStr (pretty_print bst1)
+    putStr (pretty_print' bst1)
     putStr "\n"
-    putStr (pretty_print bst2)
+    putStr (pretty_print' bst2)
     putStr "\n"
-    putStr (pretty_print bst3)
+    putStr (pretty_print' bst3)
     putStr "\n"
-    putStr (pretty_print bst4)
+    putStr (pretty_print' bst4)
     putStr "\n"
-    putStr (pretty_print bst5)
+    putStr (pretty_print' bst5)
     putStr "\n"
-    putStr (pretty_print bst6)
-
-
+    putStr (pretty_print' bst6)
