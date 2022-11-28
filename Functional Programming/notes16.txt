@@ -1,0 +1,71 @@
+Types:: Collection of related values 
+    Int Integer
+    Bool 
+    Float Double
+
+Every valid expression has a unique most general type 
+
+Type Inference:
+    x :: Bool 
+    then [x] :: [Bool]
+
+unknown :: a 
+f :: Int -> Int 
+f = unknown
+
+id :: a -> a 
+id' :: a -> b 
+
+Math :: (+),(-),(*),quot,rem
+        negate
+        abs, max
+
+Tuple :: (,) :: a -> b -> (a, b)
+
+[] :: [a]
+
+(:) :: a -> [a] -> [a]
+
+head :: [a] -> a
+tail :: [a] -> [a]
+
+length :: [a] -> Int
+
+reverse :: [a] -> [a]
+(!!) :: [a] -> Int -> a
+
+take, drop :: Int -> [a] -> [a]
+
+sum/product :: Num a => a 
+repeat :: a -> [a]
+
+replicate :: Int -> a -> [a]
+
+iterate :: (a -> a) -> a -> [a]
+
+Expressions are evaluated when they're needed
+Data structures are persistent
+
+
+isEmpty :: [a] -> Bool 
+isEmpty as = as == [] -- runtime error because type a has to be in the ord class
+isEmpty as = null as -- correct
+
+
+not :: Bool -> Bool 
+&&, || :: Bool -> Bool -> Bool
+
+(++) :: [a] -> [a] -> [a]
+
+type f :: a -> b -> c -> d
+equivalent f :: a -> (b -> (c -> d))
+
+(!!) :: [a] -> a
+lookup :: Int -> a 
+lookup i = [1,2,3] !! i
+lookup = (!!) [1,2,3]
+
+compare :: (Ord a) => a -> a -> Ordering
+
+show :: Show a => a -> String
+read :: Read a => String -> a 

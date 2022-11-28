@@ -1,0 +1,11 @@
+Exam:
+    Explain 2-3 lines 
+    Explain and detail 6-7 lines
+
+    General problems
+        Setting up interfaces onCreate
+        Buttons
+
+    Q1: onCreate, give snippet of code
+    Q2: detail functionality
+

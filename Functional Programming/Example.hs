@@ -21,12 +21,12 @@ count c cs = length [c' | c' <- cs, c' == c]
 count c cs = length (filter prd cs)
     where prd c' = c' == c
 
-frequencies :: String -> [Float]
-frequencies cs = [percentage (count $ cs) len | c <- ['a'..'z']]
-    where len = length cs
+-- frequencies :: String -> [Float]
+-- frequencies cs = [percentage (count $ cs) len | c <- ['a'..'z']]
+--     where len = length cs
 
-percentage' :: Int -> Int -> Float
-percentage' a b = (a/b) * 100
+-- percentage' :: Int -> Int -> Float
+-- percentage' a b = (a/b) * 100
 
 zipWidth :: (a -> b -> c) -> [a] -> [b] -> [c]
 zipWidth f as bs = map f' (zip as bs)
