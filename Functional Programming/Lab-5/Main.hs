@@ -17,6 +17,10 @@ class (Show a) => Printable a where
     print_it a = print a
     println_it a = putStr (show a ++ "\n")
 
+instance Printable Int where
+    print_it a = print a
+    println_it a = putStr (show a ++ "\n")
+
 
 {- Task 2
 
@@ -27,9 +31,9 @@ instance Printable Bool where
     println_it a = putStr (show a ++ "\n")
     
     
+{- Task 3 
 
-
-{- Task 3 -}
+-}
 
 data UnaryFunction a b = UnaryFunction {name :: String, 
                                         definition :: a -> b}
@@ -39,7 +43,8 @@ data UnaryFunction a b = UnaryFunction {name :: String,
 
 -}
 
-
+instance (Show a, Show b) => Show (UnaryFunction a b) where
+    show name = show name
 
 
 {- Task 5
