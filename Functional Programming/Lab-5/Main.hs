@@ -3,6 +3,7 @@
 - Number: 119380051
 - Assignment: 05
 -}
+{-# LANGUAGE InstanceSigs #-}
 
 module Main where
 
@@ -29,13 +30,13 @@ instance Printable Int where
 instance Printable Bool where
     print_it a = print a
     println_it a = putStr (show a ++ "\n")
-    
-    
+
+
 {- Task 3 
 
 -}
 
-data UnaryFunction a b = UnaryFunction {name :: String, 
+data UnaryFunction a b = UnaryFunction {name :: String,
                                         definition :: a -> b}
 
 
@@ -43,20 +44,26 @@ data UnaryFunction a b = UnaryFunction {name :: String,
 
 -}
 
-instance (Show a, Show b) => Show (UnaryFunction a b) where
-    show name = show name
+instance (Bounded a, Enum a, Show a, Show b)=> Show (UnaryFunction a b) where
+-- instance (Bounded definition, Enum definition, Show definition)=> Show (UnaryFunction name definition) where
+    show (UnaryFunction name definition) = name ++ " { " ++ show False ++ " -> " ++ show True ++ " : " ++ show True ++ " -> " ++ show False ++ " }"
 
 
 {- Task 5
 
 -}
 
-    
-    
+-- instance (Bounded definition, Enum definition, Show definition) => Printable (UnaryFunction name definition) where
+instance (Bounded a, Enum a, Show a, Show b)=> Printable (UnaryFunction a b) where
+    print_it :: UnaryFunction a b -> IO ()
+    print_it (UnaryFunction a b) = print (" { " ++ show False ++ " -> " ++ show True ++ " : " ++ show True ++ " -> " ++ show False ++ " }")
+    println_it :: UnaryFunction a b -> IO ()
+    println_it (UnaryFunction a b) = print (" { " ++ show False ++ " -> " ++ show True ++ " : " ++ show True ++ " -> " ++ show False ++ " }\n")
+
 
 {- Task 6
 
 -}
 
 main = do
-    println_it True
+    print_it (UnaryFunction "deez nuts" not)

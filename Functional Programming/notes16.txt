@@ -69,3 +69,5 @@ compare :: (Ord a) => a -> a -> Ordering
 
 show :: Show a => a -> String
 read :: Read a => String -> a 
+
+
