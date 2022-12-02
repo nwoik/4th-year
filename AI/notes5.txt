@@ -15,8 +15,6 @@ Gradient descent - search in the model's parameter space for values of the param
 - Starts with an initial guess for the values of the parameter.
 - do this repeatedly, updates param values - in hopes to reduce loss.
 
-took a pic to show the graph
-
 How to locate beta - If the gradient is positive, then make the beta smaller, vice versa for negative(bigger).
 
 Bi = Bi - gj/agBi
@@ -25,7 +23,6 @@ gj = og gradient
 gBi = gradient of Beta
 a = Alpha(multiply by learning rate)
 
-Look up Alpha, cuz you were watching the waifu gacha
 Alpha will not be 0, as it would make no change
 
 B = Vector of Betas(n+1 in length)
@@ -33,7 +30,6 @@ Using the vectorized implementation works with all the old values
 
 Baby Steps
 Alpha - change each Beta based on its gradient, this time instead multiply each gradient by a number less than 1
-Just right, like Goldilocks
 
 You didn't need to scale your features in normal equation,but with gradient descent you SHOULD scale your features.
 - If you don't scale, it becomes quite indirect on the path to the minimum
