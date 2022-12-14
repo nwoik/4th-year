@@ -31,16 +31,18 @@ decide vs i = compare (length ts) (length fs) == GT
           prd2 v' = v' i == False
 
 
-class (Num a) => Movable a where
-    forward :: Int -> a
-    backward :: Int -> a
-    step_size :: Int
+-- class (Num a) => Movable a where
+--     forward :: Int -> a
+--     backward :: Int -> a
+--     step_size :: Int
 
-    forward n a = sum n a
-    forward n a = product n a
+--     forward n a = sum n a
+--     forward n a = product n a
 
     
-
+pyths :: Int -> [(Int, Int, Int)]
+pyths n = [(x,y,z) | x <- ns, y <- ns, z <- ns, x*x + y*y == z*z]
+    where ns = [1..n]
 
 main = do
     print(decide [voter, voter', voter] 3)
