@@ -3,38 +3,40 @@
 - Number: 119380051
 - Assignment: 05
 -}
-{-# LANGUAGE InstanceSigs #-}
 
 module Main where
 
 
 {- Task 1
 
+Context show is applied to a.
+
+print_it and println_it takes a variable a and outputs an IO class. 
+It applies the function putStr to show applied to variable a.
 -}
 
 class (Show a) => Printable a where
     print_it, println_it :: a -> IO ()
 
-    print_it a = print a
+    print_it a = putStr (show a)
     println_it a = putStr (show a ++ "\n")
 
 instance Printable Int where
-    print_it a = print a
+    print_it a = putStr (show a) 
     println_it a = putStr (show a ++ "\n")
+
 
 
 {- Task 2
-
+An instance where polymorphic type a is a Bool
 -}
 
 instance Printable Bool where
-    print_it a = print a
+    print_it a = putStr (show a) 
     println_it a = putStr (show a ++ "\n")
 
 
-{- Task 3 
-
--}
+{- Task 3 -}
 
 data UnaryFunction a b = UnaryFunction {name :: String,
                                         definition :: a -> b}
@@ -42,23 +44,38 @@ data UnaryFunction a b = UnaryFunction {name :: String,
 
 {- Task 4
 
+Context Bounded, Enum and Show are applied to a.
+Context Show is applied to b.  
+
+An instance where the function show is applied 
+to a UnaryFunction data type where:
+
+name is concatenated to a closing bracket,
+which is concatenated to concat applied to a list comprehension,
+where show is applied to variable a and concatenated to "->",
+which is concatenated to show applied to 
+the result of definition applied to a, for each a in a list
+containing minbound to maxbound. 
+Which is concatenated to a closing bracket.
 -}
 
-instance (Bounded a, Enum a, Show a, Show b)=> Show (UnaryFunction a b) where
--- instance (Bounded definition, Enum definition, Show definition)=> Show (UnaryFunction name definition) where
-    show (UnaryFunction name definition) = name ++ " { " ++ show False ++ " -> " ++ show True ++ " : " ++ show True ++ " -> " ++ show False ++ " }"
+instance (Bounded a, Enum a, Show a, Show b) => Show (UnaryFunction a b)
+    where show (UnaryFunction name definition) = name ++ " {" 
+            ++ concat [show a ++ "->" ++ show (definition a) ++ ", "
+            | a <- [minBound..maxBound]] ++ "}"  
+
 
 
 {- Task 5
-
+An instance where polymorphic type a is UnaryFunction a b,
+where a amd b are polymorphic.
 -}
 
--- instance (Bounded definition, Enum definition, Show definition) => Printable (UnaryFunction name definition) where
-instance (Bounded a, Enum a, Show a, Show b)=> Printable (UnaryFunction a b) where
-    print_it :: UnaryFunction a b -> IO ()
-    print_it (UnaryFunction a b) = print (" { " ++ show False ++ " -> " ++ show True ++ " : " ++ show True ++ " -> " ++ show False ++ " }")
-    println_it :: UnaryFunction a b -> IO ()
-    println_it (UnaryFunction a b) = print (" { " ++ show False ++ " -> " ++ show True ++ " : " ++ show True ++ " -> " ++ show False ++ " }\n")
+instance (Bounded a, Enum a, Show a, Show b) => 
+    Printable (UnaryFunction a b) where 
+        print_it (UnaryFunction a b) = putStr (show (UnaryFunction a b))
+        println_it (UnaryFunction a b) = 
+            putStr (show (UnaryFunction a b) ++ "\n")
 
 
 {- Task 6
@@ -66,4 +83,4 @@ instance (Bounded a, Enum a, Show a, Show b)=> Printable (UnaryFunction a b) whe
 -}
 
 main = do
-    print_it (UnaryFunction "deez nuts" not)
+    print_it (UnaryFunction "UnarFunction" not)

@@ -1,0 +1,19 @@
+Neural network Gradient ascent:
+    Start with a blank image
+    Modify the image to get neurons to activate
+
+Different achitectures:
+    Skip connections. Adding the outputs of multiple layers to a higher one
+
+Different classes:
+    Object localization
+
+Image segmentation:
+    Divide the image into areas
+
+Case study: MS Teams
+
+
+
+
+
