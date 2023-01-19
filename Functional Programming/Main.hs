@@ -32,12 +32,14 @@ decide vs i = compare (length ts) (length fs) == GT
 
 
 -- class (Num a) => Movable a where
---     forward :: Int -> a
---     backward :: Int -> a
+--     forward :: a -> a 
+--     backward :: a -> a
 --     step_size :: Int
 
---     forward n a = sum n a
---     forward n a = product n a
+--     step_size = 2
+--     forward a = a + step_size
+
+
 
     
 pyths :: Int -> [(Int, Int, Int)]

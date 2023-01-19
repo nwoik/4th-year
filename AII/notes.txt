@@ -1,0 +1,54 @@
+Natural Language Processing:
+    Free-form text:
+        Each document becomes 1 vector
+
+        Sets:
+            Stored in vector    
+            A vector is sparse when most of the entries are 0
+
+        Bag:
+            Duplicates allowed unlike sets 
+
+        Bag-O-Words:
+            Tokenization:
+                Upper case changed to lower case 
+                Remove punctuation
+                Split at space    
+
+            Stop-Words (not, are, is, to, be):
+                Common little words are removed
+                When making a spam classifier, little words don't matter
+                When making a search engine, they're important
+
+            Stemming/Lemmatization:
+                Removes the endings of words
+                Hating and hated are changed to hat
+
+                Lemmatization makes hating and hated are changed to hate
+
+            Count-vectorization:
+                List all the remaining words and put them in a vector
+
+            Tf-Idf:
+                Tf is frequency in current doc 
+                Idf is frequency accross all docs
+                Words that occur accross many docs are unimportant 
+
+            Dimension of vectors is the amount of words that occur in a document
+            Therefore most of the documents will be sparse 
+            Words that are too frequent can be removed 
+            Words that aren't used can be removed 
+            Only keep the most frequent words 
+
+            Problems:
+                Vectors lose their ordering, losing information
+                Throwing away stop words can cause 2 sentences that have different means have the same meaning
+                Doesn't capture synonyms
+
+            Uses:
+                Spam detection
+                Not suited for language training
+
+            Cosine distance is used to measure distance between documents
+            
+

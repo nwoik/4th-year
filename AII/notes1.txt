@@ -1,0 +1,20 @@
+Sequence of Integers:
+    each word has a unique identifier, usually sorted by freq
+    words that aren't in the vector (top 20k words), are labelled as UNK, 1 as it's unique int 
+    inputs should be the same length:
+        When inputs are too long, they're pruned
+        if they're too short, they're padded with 0s
+
+    problems:
+        Words of the same meaning, have 0 similarity using the cosine function
+
+Word embeddings:
+    Document is a list, every word is a vector
+    words are in a smaller vectors that are dense (barely any 0s)
+    geometric relationships between vectors
+
+Pretrained word embeddings:
+    GloVe:
+        Words are trained based on context 
+    
+
