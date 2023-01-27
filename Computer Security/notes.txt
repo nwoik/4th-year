@@ -1,0 +1,23 @@
+Confidentiality:
+    Prevents unauthorised disclosure of info
+
+Access Control:
+    Limiting and controlling use of info 
+
+Availability:
+    Insures system is always available 
+
+Accountability:
+    Ensures information access is monitored
+
+Modelling attacks:
+    Atk tree:
+        Attack goal is the root node
+        Each leaf is a sub goal 
+        Children of subgoals are ways to achieve subgoals 
+        AND and OR nodes
+
+    
+
+
+    

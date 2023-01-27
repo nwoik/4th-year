@@ -1,3 +1,18 @@
-Intro to Choco:
-    
+Modelling II:
+    Business sells many types of items:
+        Each type:
+            Fixed price
+            price per items
+            weight
+            current stock level
+
+        Truck:
+            Max weight cap 
+
+        Constraints:
+            Choose items from stock to load onto truck without exceeding weight
+            make sure profit is over a threshold
+            maximize potiential profit
+
+        
 

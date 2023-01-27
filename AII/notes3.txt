@@ -1,0 +1,15 @@
+Language model:
+    In english, it estimates the probability of each possible string of words
+
+    A multiclass classifier is used to make the model
+    Softmax is used for the probabilities of the words 
+    
+    Character classifier is much easier because the amount of classes is much smaller
+
+    Self supervised learning:
+        The label in the recurring neural net is in the output being passed back in 
+
+    Generating text using the language model:
+        The model is made stochastic
+        Instead of picking the most likely, it will pick based on it's probabilities.
+

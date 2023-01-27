@@ -1,0 +1,18 @@
+Recurrent Neural Nets:
+    State:
+        feed in the first word and get an output
+        use the previous output/state as an input
+
+    Recurrent Neuron:
+        activation function is tanh
+
+    RNN layer:
+        A vector of 0s are used as an init state 
+        Output is a vector
+
+    Backpropagation through time:
+        
+    
+
+
+
