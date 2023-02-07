@@ -1,0 +1,9 @@
+Pros of hardware programming:
+    More secure
+    Faster computation time 
+
+    Issues:
+        Design complication
+        Solved by CAD (Computer assisted design), design reuse
+
+
