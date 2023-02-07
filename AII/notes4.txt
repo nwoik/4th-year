@@ -1,0 +1,20 @@
+Transformers: (not on exam)
+    Self attention:
+        The whole content is fed in, in one go into a word embedding as a matrix
+        
+        Compute similarity between a word and every other word
+        softmax is used to make the calculations probabilities
+        Calculate the new word embedding using the probabilities from the similarities and original word embedding
+        
+        Learned 3 weights are introduced
+        Query, key and value
+        The new matrix is multiplied by query and key of them to make 2 matrices
+        Those 2 are multiplied to calculate similarity
+        softmax is used to make the calculations probabilities
+        Calculate the new word embedding by multiplying the value by the probabilities
+
+        Do this H times
+
+        Word ordering is lost because it's treated as a set
+        
+

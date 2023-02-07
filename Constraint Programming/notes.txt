@@ -14,5 +14,18 @@ Modelling II:
             make sure profit is over a threshold
             maximize potiential profit
 
-        
+Modelling III:
+    Bin packing
+        size of obj = [s1, .. sx]
+        number of data = k
+        bin capacity = c
+
+        assign obj in bins without going over the cap and every obj has a bin
+
+        variables = {o1, ..ox, b1, ..bx}
+        Constraints = {every obj has a bin,
+                        b.size < b.capacity}
+
+    
+    
 

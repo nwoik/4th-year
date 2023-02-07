@@ -1,0 +1,39 @@
+Recommender systems:
+    Personalized:
+        Recommends based on the user
+        Recommends based on user's circumstance 
+
+    Item (I) - the thing being recommended
+    i - individual item
+    U - users 
+    u - user 
+    R - interactions matrix UI
+
+    Problems:
+        Sparsity:   
+            Most of the matrix is empty
+        Cold-start items:
+            New products added have no ratings
+            In some domains, new items are the most common (news)
+
+        Cold-start users:
+            New users have no ratings 
+            Infrequent users have very little data
+            In some domains, new users are the most common (shopping)
+
+    Recommender Systems Architecture:
+        Candidate generation:
+            Candidates are domain specific
+
+        Scoring:
+            Score the Candidates
+
+        Top-N recommendation:
+            Pick the candidates with the highest scores
+
+    Content-Based recommender: (scoring)
+        Both the users and items are scored using the same features
+        Same dimensions
+
+
+
