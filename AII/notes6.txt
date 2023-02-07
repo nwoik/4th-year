@@ -1,0 +1,18 @@
+Recommender Systems:
+    Problems:
+        Some people use the rating scale differently
+        Popularity bias 
+
+    Non-Personalized recommender:
+
+    Adv
+        No need for signup forms
+        Can recommend new things outside set boundries
+
+    Cons
+        Slow because it has to calculate the similarity between all the candidates then recommned.
+
+
+
+
+
