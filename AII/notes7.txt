@@ -1,0 +1,26 @@
+Recommender Systems III:
+    Orignal matrix has high dimensions and is sparse U*I
+    Embeddings (dense vectors) are created from original. Full of latent features.
+    The features are learned rather than chosen
+    A predicted rating is created from U*I and adding the mean
+
+    dimensions are a hyperparameter
+
+    Learning:
+        All vectors are initialized randomly
+        For each known rating, mean + U*I  
+        If the prediction is wrong, change the weights 
+        MSE is used
+        
+    Matrix completion:
+        All the blanks are filled in the original matrix
+
+    Pros:
+        No need to ask users for input data 
+        Fast predictions, can be incremental
+
+    Top N recommendation:
+        Top N diversity:
+            diversity is calculated by finding the similar of each feature/ratings 
+
+        Prone to feedback loops
