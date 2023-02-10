@@ -35,5 +35,7 @@ Recommender systems:
         Both the users and items are scored using the same features
         Same dimensions
 
+        Only recommends things similar to things that have been seen
+
 
 

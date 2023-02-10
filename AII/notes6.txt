@@ -11,6 +11,7 @@ Recommender Systems:
 
     Cons
         Slow because it has to calculate the similarity between all the candidates then recommned.
+        Work done at predict
 
 
 
