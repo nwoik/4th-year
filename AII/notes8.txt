@@ -1,0 +1,34 @@
+Recommender Systems IV
+
+    Ranking > Correctly predicting ratings when the results are gonna be in order
+
+    Beyond-accuracy:
+    
+    Explicit ratings to Implicit ratings:
+        Problems with explicit feedback:
+            Most users don't bother
+
+        Implicit ratings:
+            Examples of behaviour. E.g watch time, downloads, purchases, clicks
+
+            Problems:
+                No negative ratings 
+            
+        All ratings algorithms fall to cold start
+
+    Context aware recommender Systems:
+        Recommendations based on location, time, day, weather
+
+        Ways on picking recommendations based on context:
+            1: Filter candidates based on context. Pre filtering
+        
+            2: Filter results based on context. Post filtering
+
+            3: Make a recommender systems with context in mind
+                Recurrent nets
+                Transformers
+        
+        Conversational recommender:
+            
+        
+

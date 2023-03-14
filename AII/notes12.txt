@@ -1,0 +1,25 @@
+Deep Q Learning:
+    DQN - Deep Q Network
+    Output - Q values 
+
+    1st Architecture:
+        Inputs foreach sensor in binary
+        Inputs foreach function
+
+        Output is 1 number
+        Linear output function for the output layer
+        It's run N times for the number of actions 
+
+    2nd Architecture:
+        Inputs foreach sensor in binary
+
+        Output is N numbers for each action
+
+    DQN Learning Algorithm:
+
+    DQN Loss Func:
+
+    DQN for 
+
+
+

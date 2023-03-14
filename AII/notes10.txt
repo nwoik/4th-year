@@ -1,0 +1,67 @@
+Genetic Algorithms:
+    Evolution:
+        Inheritence:
+            Inherits characteristics from parents
+
+        Variation:
+            Individuals can vary  
+            mutation (copying errors)
+
+        Fitness:
+            Anything that makes it better adapted to an enviroment
+            Lesser characteristics are eliminated  
+
+    Genetic Algorithms:
+        n: number of individuals in the population
+        x: amount of crossover
+        k: which generation we're on
+        u: percentage of mutation
+
+        Create population from 
+
+        Select
+        Mutation is done on the new generation
+
+        Agents have to be converted into bit strings (encode and decode)
+        Tables are made of a row per percept
+
+        action^2 
+
+    Fitness:
+        Fitness function is task specific
+        Fitness should be measured multiple times
+
+    Copy:
+        Roulette wheel selection:
+            Agents are chosen in proportion to their fitness
+            Individual's fitness/total of fitness
+
+        Rank selection:
+            Agents are ordered by fitness
+            Position/Sum of position
+
+        Tournament selection:
+            Select a number of agents at random n times 
+            Take the fittest of each selection
+
+    Crossover:
+        Same mechanisms as copying used to pick mates
+        Random amounts of bits from mates are used to make new mates 
+
+        Single Point:
+            Pick a random position on both mates
+             ^: m1 
+
+    Mutation:
+        All agents have the same chance of mutation
+        Flipping 1 bit from the agent 
+
+    Problems:
+        Crowding:
+            Lack of diversity in the population
+            Risk of stagnation
+
+            Fix:
+                Increase mutation rate
+                Don't use Roulette selection
+

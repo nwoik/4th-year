@@ -1,0 +1,30 @@
+Delibrative agents:
+    Problems with not thinking ahead:
+        Suboptimal solution with higher cost
+        Hitting dead ends
+
+    Problems with thinking ahead:
+        In dynamic enviroments, opportunities can pass to execute actions
+
+    Planning sequences:
+        Static enviroments:
+            Take inputs from percepts -> Create a plan -> Execute whole plan 
+
+        Dynamic enviroments:
+            Take inputs from percepts -> Create a plan -> Execute first step -> repeat
+
+    Explicit State space: (Exam Q)
+        All states reachable by sequences of actions
+
+        Graph represented by nodes and edges
+        Stored with adjencency matrix and list
+        
+    Implicit State space:
+        Define start state,
+        A sequence of actions to get to other states 
+        Define Goal condition
+
+    Solution:
+        Path that takes you from the start state, to the goal state
+        
+

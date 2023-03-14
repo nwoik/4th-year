@@ -1,0 +1,70 @@
+Agents: Q2 on exam 
+    Anything that perceives it's enviroment using it's sensors and acts upon it using its effectors.
+
+    Sensors takes percepts (inputs)
+    Effectors performs actions
+
+    Robots:
+        Agents that are embodied, situated in a physical enviroments
+        E.g Vacuum cleaner, self driving cars
+
+    Software agents:
+        Situated in virtual enviroments
+        Effectors modify data structures
+        E.g NPCs in video games, recommendations
+
+    Sense, Plan, Act:
+        Sense the enviroment
+        Decide on an action
+        Carry out the action
+
+    Action function:
+        From percepts, actions are chosen
+        Intelligent agents are autonomous and rational.
+
+    Enviroments:
+        Fully observable vs partially observable
+            Fully observable: All the information in an enviroment is available E.g chess board
+            Partially observable: Only some info in the enviroment is available
+
+        Deterministic vs stochastic
+            Deterministic: The same action will get the same outcome
+            Stochastic: The same action might not get the same outcome 
+
+        Single-step vs Sequencial
+            Single-step: Decisions are made independently without needing previous or the next step
+            Sequencial: Decisions are made based on previous and potential information
+
+        Static vs Dynamic
+            Static: Enviroment doesn't change while making the decision 
+            Dynamic: Enviroment changes while decisions are being made 
+
+        Discrete vs Continous:
+            Discrete: There's a finite set of actions
+            Continous: There's an infinite set of actions
+
+        Single agent vs Multi agent
+            Single agent: Only one agent acting in the enviroment
+            Multi agent: Multiple agents acting in the enviroment
+
+    Agents:
+        Reactive:
+            Takes in percept and makes a single step decision based on the percept
+
+        Delibrative:
+            Thinks ahead and makes decisions based on potential future percepts
+
+    Table Driven Agent: (reactive)
+        s = Sense() # s is a vector
+        a = Lookup(s, table)
+        Execute(a)
+
+    000 = move
+    001 = right
+    010 = move
+    011 = move 
+    100 = Left
+    101 = Left
+    110 = Left
+    111 = Left 
+

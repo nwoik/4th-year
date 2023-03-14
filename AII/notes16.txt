@@ -1,0 +1,24 @@
+State Space Search (Path Finding): (Applied AI)
+    Roadmaps:
+        Explicit state spaces (adjancency matrix)
+        Nodes:
+            Junctions/Intersections
+            Entrances and Exits to car parks
+            Bridges/Tunnels
+            Speed limit changes
+        Edges:
+            Roads are represented by 2 edges for each direction
+            Roads are weighed in distance/speed = time
+
+        Must be able to recalculate quickly in case a user turns off the optimal path 
+        Recalculation > Optimality
+        Branching factor: Amount of edges a node has 
+
+    NPCs:
+        Path finding in a grid based game:
+            Axial games only have vertical and horizontal movement
+            To avoid enemies, then stick higher costs on the tiles closer to the enemies
+            Nodes for only waypoints are more efficient
+
+
+

@@ -1,0 +1,45 @@
+Reinforcement Learning:
+    reward: pos/neg number based on the action carried out
+    
+    Starts in State S1
+    Action A1 is executed
+    Reward R1 is given
+    Enters State S2
+    ...
+
+    Gamma makes later rewards count less 
+
+    r0*g^0 + r1*g^1 + .. + rx*g^x 
+    procastination, different discount factor
+
+    percept|action|Q (cumulative reward of the action)
+    amount = (2^m)*n 
+
+    If in state S,
+    Find the highest Q value in S
+    Execute the action with the highest Q value 
+
+    Exploitation VS Exploration:
+        Exploitation:
+            Actions are chosen based on highest Q values
+
+        Exploration:
+            Actions are chosen at random 
+
+        e is a value between 0-1
+        random number is chosen and if it's less than e, then it explores
+
+    Updating Q values:
+        Q = r + g * x max Q(x', d)
+        max Q(x',d) = The max of all of the Q values in the table 
+        Q is based on the enviroment
+
+     Problems:
+        Doesn't scale in table form
+        
+
+    
+
+
+
+

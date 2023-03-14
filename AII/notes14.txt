@@ -1,0 +1,92 @@
+State space search:
+    Starts at the start state 
+    While agenda isn't empty:
+        currentState = taken from the front of the agenda
+        if currentState satisfies goal state
+            return the path of actions to currentState
+        else
+            successors = Successors(currentState)
+            insert successors into agenda 
+
+        return fail
+
+    A tree is built during the algorithm
+    State space and search tree are different
+
+    Whenever a state is removed from the agenda, it's added to the tree 
+    Not the whole tree has to be explored
+    It might also explore the same paths on the tree 
+
+    How to solve re-exploration:
+        Discard a successor if it's the same as it's parent (not very effective but cheap O^1)
+        Discard a successor if it's the same as another node on the path (more effective and is linear O^length of path)
+        Discard a successor if it's the same as any generated node (very effective but exponential cost)
+
+    Search strategy:
+        Breadth first:
+            Agenda is a queue
+            Nodes are removed from the front and inserted at the back
+            Everything at depth i goes into the tree before anything at i+1
+            It grows the tree level by level 
+            It's complete
+
+        Depth first:
+            Agenda is a stack
+            Nodes are removed from the front and inserted at the front
+            This searches path by path
+            Not complete cause it can get stuck on infinite paths
+
+        Least Cost:
+            Agenda is a priority queue sorted by ascending path costs 
+            Solution is the path with the cheapest cost.
+            Complete when action cost is positive it's path cost is always increasing.
+
+        Informed search:
+            Agenda is a priority queue sorted by using an eval function by ascending heuristics
+            Heuristic: 
+                an estimate of the remaining cost to get to the goal 
+                depends on the problem
+
+        Greedy search:
+            Agenda is a priority queue sorted by the ascending heuristic
+            Not complete. A bad heuristic function can make infinite paths 
+            Not optimal cause heuristic values could mislead 
+
+        A search:
+            Least cost + Heuristic = Total cost
+            Admissiable: never overestimates
+            Complete if action costs are positive
+            It's optimal if the heuristic is admissiable 
+
+        Heuristic funtions Evaluation:
+            Admissiablility: If it's admissiable
+            Loss: How close it is to the true cost, underestimates less
+            Speed of calcuation: cheap calcuation 
+
+
+
+    Evaluation of search strategy:
+        Completeness:
+            A search strategy is guaranteed to find the solution if there is one 
+            Breadth is guaranteed to find a solution
+            Depth first is not complete because it can be stuck on an infinite path 
+
+        Optimality:
+            Are we able to find the shallowest path to the goal
+            Breadth first is more optimal because it searches level by level
+
+        Time Complexity & Space Complexity:
+            How long it takes to find a solution in the worst case
+            b = number of successors
+            d = depth of the shortest goal
+
+            Breadth first:
+                formula = b^d+1 - b
+                O(b^d+1)
+
+        
+
+
+
+
+
