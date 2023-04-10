@@ -1,0 +1,14 @@
+half theory, half modelling
+
+A:
+    Find a solution to a problem instance in the model 
+    Use choco, or table model for annotated constraints
+    Convince that the model works
+
+B:
+    Demonstrate how the algorithm can be applied
+
+C:
+    Define CSP: Constraint satisfaction problem
+
+    

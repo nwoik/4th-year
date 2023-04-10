@@ -1,0 +1,22 @@
+7 Qs answer 6
+
+What is this, explain, differenciate, state the stages 
+
+Differences between software and Hardware IPs
+Hardware Watermarking
+Stages of Hardware Watermarking
+HAAS
+
+Verilog code question
+No testbench
+
+Focus on the computer science stuff:
+
+Know the overviews
+
+true random generators
+scheduling questions
+
+No blanks
+
+

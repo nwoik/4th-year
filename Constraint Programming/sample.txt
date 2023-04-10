@@ -1,0 +1,29 @@
+CSP: Constraint satisfaction problem
+Define a constraint
+
+
+Explain what backtracking is and how its applied to csp 
+Explain complexity 
+
+AC3 algo 
+
+For the value in a domain, check for each value in the other one and if it's an acceptable pairing
+Variables: {A,B,C,D}
+Domain: {0,1,2,3} for each variable 
+Constraints:
+    (A,B): {(0,3), (1,2), (2,1)}
+    (B,C): {(0,1), (1,0), (1,2), (2,2), (2,0)}
+    (B,D): {(1,2), (2,0), (2,1)}
+    (C,D): {(0,0), (1,2), (2,1)}
+
+Table
+Q       removed     added   checks
+A -> B  A:3         -       13     
+B -> A  B:0         -       9
+B -> C  B:3         A->B        
+C -> B 
+
+
+
+
+A -> B

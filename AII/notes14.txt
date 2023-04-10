@@ -83,7 +83,7 @@ State space search:
             Breadth first:
                 formula = b^d+1 - b
                 O(b^d+1)
-
+                Best case is O(b^d)
         
 
 

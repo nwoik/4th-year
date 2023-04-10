@@ -1,0 +1,16 @@
+Problems with supervised learning:
+    Confidence levels are unreliable
+    Not robust to resist attacks
+    Fragile. E.g Fails on test set examples when they're negative
+    Biased. Inherits bias of the dataset it's trained on. Selection bias, 
+    Trust.
+    Changes in the world, world changes to enviroment it's been trained in. Training set isn't representitive of what it should be now
+    
+AGI:
+    Common sense:
+        Does not have implied knowledge
+        Cannot solve ambigous problems without world knowledge
+        
+
+
+

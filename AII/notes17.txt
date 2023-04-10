@@ -1,0 +1,26 @@
+Big O:
+    Breadth first:
+        b =  branching factor
+        d = depth
+
+        formula = b^d+1 - b
+        Worst case O(b^d+1)
+        Best case is O(b^d)
+
+        Worst case space is also O(b^d+1)
+
+    Depth first:
+        m = length of longest branch 
+        Worst case O(b^m)
+        Best case is O(db) linear
+        Depth first works best in state spaces with many goals
+
+        Worst case space is O(mb)
+
+    Least Cost/Greedy/A*:
+        Worst case O(b^m)
+        Best case is O(db) linear
+        Heuristic tries to lead down the best path
+
+        Worst case space O(b^m)
+
