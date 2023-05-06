@@ -54,7 +54,7 @@ State space search:
 
         A search:
             Least cost + Heuristic = Total cost
-            Admissiable: never overestimates
+            Admissiable: never overestimates distance to goal state
             Complete if action costs are positive
             It's optimal if the heuristic is admissiable 
 

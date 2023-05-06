@@ -1,0 +1,38 @@
+10 marks = 1 page
+
+Q1 L1-4 Language processing
+Q2 L6-9 Recommender Systems
+Q3 L14-16 State space search big O | no L17
+Q4 L18
+
+Q1
+Bag o Words: Words in a document is represented in a vector where each word is a number of its frequency and 
+
+Bag o word problems: Can't identify synonyms. Order of the sentence is lost. Vector representation can be the same for 2 different sentiments.
+
+Word embedding: each word is a vector that's not sparse and words that are related have similar vectors
+
+10000x200 = 2000000
+200x100 +100 = 20100
+100x100 = 10000
+100x1 + 1 = 101
+total = 2030201 
+
+GRU excels 
+
+
+Q2
+More about how good a design is than technical implementation
+Domain specific.
+
+3 parties who have objectives, the eater, restaurant and the team running the app
+The team get restaurants to sign up. 
+The restaurants want more customers.
+The customers want to each.
+
+candidate generation based on location
+
+Q3
+Path cost accumulates. Heuristic doesn't accumulates
+
+A* speci
